@@ -1,0 +1,417 @@
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&family=Oleo+Script&display=swap');
+
+/* === FONDO CON CAPAS === */
+/* === FONDO CON CAPAS === */
+/* Asegura que todo ocupe el alto completo */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Sansation', sans-serif;
+}
+
+/* Fondo de pantalla completo */
+body::before {
+  content: "";
+  position: fixed; /* para que no se repita al hacer scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('iconos/Fonfo_Mapa_Color.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+/* Asegura que se muestre scroll si el contenido es más largo */
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  background-color: #fff; /* fallback si la imagen no carga */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === SIDEBAR === */
+/* Botón hamburguesa (puedes ocultarlo si ya hay barra de íconos) */
+.menu-toggle {
+    display: none;
+}
+
+/* Barra lateral con íconos */
+.icon-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100vh;
+    background-color: #263C3EA6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    z-index: 1003;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    margin: 10px 0;
+    cursor: pointer;
+    padding: 5px;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.icon-btn:hover {
+    background-color: #2a3e42;
+}
+
+.icon-btn img {
+    width: 40px;
+    height: 40px;
+    /*filter: invert(1);/**/
+}
+
+/* Panel emergente */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: transparent/*#263C3EA6/**/;
+    color: white;
+    padding: 20px;
+    z-index: 1004;
+    transition: left 0.3s ease;
+}
+
+.sidebar.active {
+    left: 100px; /* aparece justo al lado del menú de íconos */
+}
+
+.sidebar h2 {
+    font-family: 'Oleo Script', cursive;
+    color: white;
+    
+    font-weight: normal;
+    font-size: 38px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+
+    
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.sidebar a:hover {
+    background-color: #2a3e42;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1002;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar .close-btn {
+    padding: 15px 25px;
+    border: none;
+    /*border-radius: 10px;/**/
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: background 0.3s;
+
+    border-radius: 15px 15px 40px 15px;
+    margin: 10px;
+}
+
+.sidebar .close-btn:hover {
+    transform: scale(1.25);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === CONTENIDO PRINCIPAL === */
+.container {
+  margin-left: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.chat-box {
+  width: 100%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* === ENCABEZADO === */
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.top-header h1 {
+  font-family: 'Oleo Script', cursive;
+  font-weight: normal;
+  font-size: 38px;
+  color: #2a3e42;
+  margin: 0 auto;
+}
+
+.back-btn {
+  background-image: url('iconos/Retorno.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: scale(1.2);
+}
+
+/* === TÍTULO DE LA SALA === */
+.container h2 {
+  font-family: 'Oleo Script', cursive;
+  font-size: 24px;
+  color: #2a3e42;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: normal;
+}
+
+/* === MENSAJES GENERALES (ya existentes) === */
+#chat-scroll {
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  border-radius: 10px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Mensaje base */
+.mensaje {
+  max-width: 70%;
+  padding: 12px 15px;
+  border-radius: 12px;
+  background-color: #d0e1f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  align-self: flex-start;
+  word-break: break-word;
+}
+
+/* Mensaje propio */
+.mensaje.propio {
+  background-color: #b2d8b2;
+  align-self: flex-end;
+}
+
+/* Nombre del usuario */
+.mensaje .nombre {
+  font-weight: bold;
+  color: #2a3e42;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Fecha en la parte inferior derecha */
+.mensaje .fecha {
+  font-size: 0.8em;
+  color: #666;
+  text-align: right;
+  display: block;
+  margin-top: 8px;
+}
+
+/* Ajustes del formulario */
+.formulario-chat {
+  display: flex;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.formulario-chat textarea {
+  flex: 1;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  resize: none;
+  min-height: 60px;
+}
+
+.formulario-chat button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.formulario-chat button:hover {
+  background: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* === FORMULARIO DE MENSAJE === */
+.formulario-chat {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.formulario-chat textarea {
+  flex: 1;
+  resize: none;
+  padding: 14px 18px;
+  font-size: 16px;
+  border: 2px solid #a2b0be;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+  font-family: 'Sansation', sans-serif;
+  outline: none;
+}
+
+.formulario-chat button {
+  background-color: #637983;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 12px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.formulario-chat button:hover {
+  background-color: #4b5f66;
+}
+
+
+
+
+
+
+
+
+
+
+/* === RESPONSIVE === */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 30px 15px;
+  }
+
+  .chat-box {
+    padding: 20px;
+  }
+
+  .top-header h1 {
+    font-size: 28px;
+  }
+
+  .formulario-chat {
+    flex-direction: column;
+  }
+
+  .formulario-chat textarea,
+  .formulario-chat button {
+    width: 100%;
+  }
+}

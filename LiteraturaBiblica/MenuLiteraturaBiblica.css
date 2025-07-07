@@ -1,0 +1,119 @@
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&family=Oleo+Script&display=swap');
+
+/* === FONDO CON CAPAS === */
+/* Estilos generales */
+body {
+    font-family: 'Sansation', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+/* Estilos generales */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Fonfo_Mapa_Color.jpg'); /* tu imagen */
+    background-size: cover; /* Mostrar la imagen completa */
+    background-repeat: no-repeat;
+    background-position: top;
+    opacity: 0.7;
+    z-index: -1;
+    
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sansation', sans-serif;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Asegura que el contenido esté por encima del overlay */
+.container, .contenido, form {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.container {
+    text-align: center;
+    background: #EDEEF0E5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+    width: 25%;
+}
+h2 {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    
+    
+    font-family: 'Oleo Script', cursive;/**/
+    font-weight: normal;
+    font-size: 24px;
+    color: #2a3e42;
+}
+.submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.submenu a {
+    display: block;
+    padding: 10px;
+    background: #637983;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.submenu a:hover {
+    background: #A2B0BE;
+}
+
+
+
+
+
+
+
+
+/* Estilos para el botón de retorno */
+.return-button {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 25px;
+    height: 25px;
+    background-image: url('Retorno.png'); /* Asegúrate de que la ruta sea correcta */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    z-index: 1003;
+    background-color: transparent;
+}
+
+.return-button:hover {
+    border-radius: 10px;
+    
+    transform: scale(1.05);
+}
+
+
+
