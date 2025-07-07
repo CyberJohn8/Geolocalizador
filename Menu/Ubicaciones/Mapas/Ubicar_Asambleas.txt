@@ -1,0 +1,365 @@
+			Por ubicar en GoogleMaps
+
+Enlaces Pendiente:
+
+El Negro N#118 ------ revisar si es correcto (Confirmar)
+Guasdualito N#154 (https://maps.app.goo.gl/Vx7PCAnuAbsMa6ni7)
+Paya N#105
+San Casimiro N#111
+San Mateo N#52  ------ revisar
+Barrinas N#165 (https://maps.app.goo.gl/s7htcxLaokPW53z88) (https://maps.app.goo.gl/PquuEY1S8FBkNyAj8)
+Barinitas N#181
+Los Rastrojos N#198 ------ revisar
+Caicara del Orinoco
+Ciudad Bolivar - Cuyuni N#77 (https://maps.app.goo.gl/5r8mG9QF8FPRFrTG7)
+Puerto Ordaz N#164
+San Félix N#83  ------ revisar (https://maps.app.goo.gl/qXyRvbWUGBh8tZBw7)
+Tumeremo N#201
+Santa Rosa del Buey N#155
+Alpargaton N# 138 ------ revisar (https://maps.app.goo.gl/1sJ5MjnSwTuzk7GW8)
+Boqueron N#32  ------ revisar 
+Campo Carabobo N#116  ------ revisar 
+Canoabo N#11
+El Cambur N#171
+Guigue N#25 ------ revisar 
+La Compañia N#119 ------ revisar 
+La Jobera N#115 ------ revisar 
+La Lagunita N#126 ------ revisar 
+LA SABANA - CANOABO N#192
+LOS CARACAROS N#145 ------ revisar (https://maps.app.goo.gl/nZThfQ2gGonT2Mrv7)
+MORÓN - PALMA SOLA N#204
+PUERTO CABELLO - EL MILAGRO N#114 (https://maps.app.goo.gl/AdhpWAaKT9QtW72VA)
+PUERTO CABELLO - EL PALITO N#189
+PUERTO CABELLO - LA LIBERTAD N#56 ------ revisar 
+SAN ESTEBAN PUEBLO N#12
+TOCUYITO N#79 ------ revisar 
+VALENCIA - FLOR AMARILLO N#129 ------ revisar 
+VALENCIA - LA BOCAINA N#139 ------ revisar 
+VALENCIA - PARCELAS II DEL SOCORRO N#166
+VALENCIA - LOS GUAYOS N#156 ------ revisar 
+VALENCIA - LOS MANGUITOS N#53 ------ revisar 
+BUENOS AIRES N#108
+BARRIO EZEQUIEL ZAMORA N#183 ------ revisar 
+BARRIO NUEVO N#182
+EL BAUL N#185
+EL MUERTICO N#193
+EL PENITENTE N#196 ------ revisar 
+GENAREÑO N#76 ------ revisar 
+LA CHORRERA N#104 ------ revisar 
+LAS VEGAS N#136
+MANRIQUE N#163
+TINACO N#33
+TUCUPITA N#206
+EL CEMENTERIO N#19 ------ revisar 
+EL VALLE N#50 ------ revisar 
+LAS ADJUNTAS N#60 ------ revisar 
+LA VEGA N#63
+BUENA VISTA N#144 ------ revisar 
+CHICHIRIVICHE N#117 ------ revisar 
+CHURUGUARA N#97
+DABAJURO N#120
+EL MENE N#14 ------ revisar 
+JACURA, PUEBLO NUEVO N#84
+LA GUACHARACA N#109 ------ revisar 
+PALMA SOLA N#15 ------ revisar 
+PUERTO CUMAREBO N#24 ------ revisar 
+SANTA CRUZ DE BUCARAL N#148
+SECTOR UNIÓN N#179 ------ revisar 
+YARACAL N#187
+SAN JUAN DE LOS MORRROS N#45 ------ revisar 
+TIGÜIGÜE N#31 ------ revisar 
+VALLE DE LA PASCUA N#186
+ZARAZA N#191
+ALTO DE PUEBLO NUEVO N#106
+Cauderales N#199
+EL CARMEN N#81 ------ revisar 
+LA MONTAÑITA N#172
+LA RELUCIENTE N#167 ------ revisar 
+LA REPRESA N#149 ------ revisar 
+MOROTURO N#159
+SAN JACINTO N#51
+EL VIGIA N#176
+JAJÍ N#205
+GUARENAS N#135
+LA MATA N#123 ------ revisar 
+LOS TEQUES N#67 ------ revisar 
+OCUMARE DEL TUY N#49 ------ revisar 
+SANTA LUCÍA N#29
+COROZO LARGO N#158
+GUANARE N#85 ------ revisar 
+GUANARITO N#146
+LOS PUERTOS DE PAYARA N#87
+SAN JOSÉ DE LAS MAJAGUAS N#121 ------ revisar 
+SAN RAFAEL DE ONOTO N#78
+TAPA DE PIEDRA N#200
+EL MANGO N#141
+SAN PEDRITO N#195
+SANTA FE N#61 ------ revisar 
+ZURITA N#184
+SAN ANTONIO N#62 ------ revisar 
+BATATAL N#102
+EL CENIZO N#170
+VALERA N#40 ------ revisar 
+CARABOBO N#43 ------ revisar 
+EL GUAYABO N#174
+ESCONDIDO N#110 ------ revisar 
+LA CANDELARIA N#190
+LA INDEPENDENCIA N#197
+OBONTE N#58 ------ revisar 
+LA REPELONA N#88 ------ revisar 
+SAN FRANCISCO N#128
+ZIPAYARE N#55
+CARTAGENA N#12
+LA SIERPE N#5 ------ revisar 
+MEDELLÍN N#13 ------ revisar 
+PASTO N#10
+TESORO N#16
+SOACHA N#9 ------ revisar 
+VALLEDUPAR N#14
+VILLA DEL ROSARIO – CUCUTA N#6
+VILLAVICENCIO N#8 ------ revisar 
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+			Por Ubicar en Mapa
+/*--Zulia--*/
+cabimas -------------------------------------
+Cuatricentenario 
+ElProgreso
+LaRepelona
+Perijá
+LosJobitos
+SanFrancisco
+Zipayare
+
+/*--Lara--*/
+barquisimeto 
+AltodePuebloNuevo 
+Carora  -------------------------------------
+Cauderales  
+Duaca  -------------------------------------
+ElCarmen 
+LaMontanita  
+LaReluciente  
+LaRepresa  
+Moroturo  
+SanJacinto  
+
+/*--Amazonas--*/
+PuertoAyacucho -------------------------------------
+
+/*--Anzoátegui--*/
+ElTigrito  -------------------------------------
+PuertolaCruz  -------------------------------------
+Orinoco  
+
+/*--Apure--*/
+CIUDAD  
+ElNegro  
+Elorza  -------------------------------------
+Guasdualito  -------------------------------------
+SanFernando -------------------------------------
+--Dos San Fernando?
+
+/*--Aragua--*/
+Maracay -------------------------------------
+CarmendeCura  
+Maracay  
+PaloNegro  
+RosariodePaya 
+PuebloNuevo  
+SanMateo  
+SantaRita 
+Zuata  
+
+/*--Barinas--*/
+Barrancas  -------------------------------------
+Barinas -------------------------------------
+Barinitas -------------------------------------
+Guamito 
+LosRastrojos 
+
+/*--Bolivar--*/
+CiudadBolívar-------------------------------------
+CaicaradelOrinoco -------------------------------------
+PuertoOrdaz  -------------------------------------
+SanFélix  
+SantaElena  
+Tumerremo -------------------------------------
+SantaRosadelBuey
+
+/*--Carabobo--*/
+Alpargatón  
+Bejuma -------------------------------------
+Boqueron 
+CampoCarabobo
+Canoabo
+Chirgua 
+Guacara -------------------------------------
+Güigüe -------------------------------------
+Juaniquero 
+LaCompañía  
+LaJobera 
+LaLagunita
+LaSabana  
+LasTrincheras
+LosCaracaros 
+Mariara -------------------------------------
+Morón -------------------------------------
+Patanemo  
+PuertoCabello -------------------------------------
+SanEsteban 
+SanJoaquin  -------------------------------------
+SanPablo 
+Tocuyito -------------------------------------
+Valencia -------------------------------------
+
+/*--Cojedes--*/
+BuenosAires  
+BarrioEzequielZamora  
+BarrioNuevo 
+ElBaul -------------------------------------
+ElMuertico
+ElPenitente  
+Genareño 
+LaChorrera  
+LasVegas 
+LosColorados 
+Manrique
+PuenteOnoto 
+SanCarlos 
+Tinaco  -------------------------------------
+Tinaquillo  -------------------------------------
+Tucupita
+ElValle 
+
+/*--Delta Amacuro--*/
+Tucupita -------------------------------------
+CIUDADd  
+
+/*--Falcon--*/
+BuenaVista  
+Chichiriviche -------------------------------------
+Churuguara -------------------------------------
+Coro -------------------------------------
+Dabajuro  -------------------------------------
+ElMene 
+JacuraPuebloNuevo  
+LaGuacharaca 
+Mirimire -------------------------------------
+PalmaSola  
+PuertoCumarebo -------------------------------------
+PuntoFijo -------------------------------------
+SantaCruzdeBucaral -------------------------------------
+SectorUnión
+Tocópero -------------------------------------
+Tucacas  
+Yaracal  -------------------------------------
+
+/*--Frontera Colombia--*/
+Cali -------------------------------------
+Cartagena -------------------------------------
+CaucasiaAntioquia  
+Macaján 
+LaSierpe 
+Manguitos  
+Manizales -------------------------------------
+ManuelaBeltránBarranquilla 
+Medellín  -------------------------------------
+Pasto -------------------------------------
+SincelejoSantaMaría 
+Tesoro 
+Soacha 
+Valledupar 
+VilladelRosarioCucuta  -------------------------------------
+Villavicencio  
+
+/*--Guarico--*/
+AltagraciadeOrituco -------------------------------------
+SanJuandelosMorros -------------------------------------
+Tiguigue 
+ValledelaPascua  -------------------------------------
+Zaraza -------------------------------------
+
+/*--Merida--*/
+ElVigia 
+ElMorro 
+Jají  
+LosPróceres 
+
+/*--Miranda--*/
+Caucagua  -------------------------------------
+Charallave  -------------------------------------
+Guarenas -------------------------------------
+Guatire -------------------------------------
+LaMata 
+LosTeques
+OcumaredelTuy -------------------------------------
+SantaLucía  -------------------------------------
+
+/*--Monagas--*/
+Maturin -------------------------------------
+
+/*--Nueva Esparta--*/
+Porlamar -------------------------------------
+
+/*--Portuguesa--*/
+Acarigua-------------------------------------
+Biscucuy-------------------------------------
+CorozoLargo
+Guanare  -------------------------------------
+Guanarito  -------------------------------------
+LosPuertosdePayara 
+SanJosédelasMajaguas  
+SanRafaeldeOnoto -------------------------------------
+TapadePiedra  
+
+/*--Sucre--*/
+Carúpano -------------------------------------
+ElMango ??????????????????
+LosAltosdeSucre ??????????????????
+SanPedrito ??????????????????
+SantaFe ??????????????????
+Zurita ??????????????????
+
+/*--Tachira--*/
+SanAntonio ????????????????????
+SanCristobal  -------------------------------------
+
+/*--Trujillo--*/
+Batatal  
+ElCenizo 
+SabanadeMendoza  
+Valera ?????????????
+
+/*--Vargas--*/
+CatialaMar -------------------------------------
+
+/*--Yaracuy--*/
+Albarico 
+Aroa -------------------------------------
+Carabobo 
+Chivacoa -------------------------------------
+ElGuayabo  
+Escondido 
+LaCandelaria 
+LaIndependencia  -------------------------------------
+LaOcho  
+LaRaya 
+Marín 
+Nirgua 
+Obonte 
+Salom  
+SanFelipe -------------------------------------
+SanJosédeCarúpano 
+SanMateodeNirgua 
+Temerla 
+Yaritagua -------------------------------------
+

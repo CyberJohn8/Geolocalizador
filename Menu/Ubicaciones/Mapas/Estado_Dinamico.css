@@ -1,0 +1,816 @@
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&family=Oleo+Script&display=swap');
+
+/* === FONDO CON CAPAS === */
+/* === FONDO CON CAPAS === */
+/* Asegura que todo ocupe el alto completo */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Sansation', sans-serif;
+}
+
+/* Fondo de pantalla completo */
+body::before {
+  content: "";
+  position: fixed; /* para que no se repita al hacer scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('iconos/Fonfo_Mapa_Color.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+/* Asegura que se muestre scroll si el contenido es más largo */
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  background-color: #fff; /* fallback si la imagen no carga */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- BARRA LATERAL DE ICONOS ---------- */
+/* === SIDEBAR === */
+/* Botón hamburguesa (puedes ocultarlo si ya hay barra de íconos) */
+.menu-toggle {
+  display: none;
+}
+
+/* Barra lateral con íconos */
+.icon-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100vh;
+  background-color: #263C3EA6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  z-index: 1003;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  margin: 10px 0;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.icon-btn:hover {
+  background-color: #2a3e42;
+}
+
+.icon-btn img {
+  width: 40px;
+  height: 40px;
+  /*filter: invert(1);/**/
+}
+
+/* Panel emergente */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 250px;
+  height: 100%;
+  background-color: transparent/*#263C3EA6/**/;
+  color: white;
+  padding: 20px;
+  z-index: 1004;
+  transition: left 0.3s ease;
+}
+
+.sidebar.active {
+  left: 100px; /* aparece justo al lado del menú de íconos */
+}
+
+.sidebar h2 {
+  font-family: 'Oleo Script', cursive;
+  color: white;
+  
+  font-weight: normal;
+  font-size: 38px;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+
+  
+  font-weight: normal;
+  font-size: 24px;
+}
+
+.sidebar a:hover {
+  background-color: #2a3e42;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1002;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar .close-btn {
+  padding: 15px 25px;
+  border: none;
+  /*border-radius: 10px;/**/
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: background 0.3s;
+
+  border-radius: 15px 15px 40px 15px;
+  margin: 10px;
+}
+
+.sidebar .close-btn:hover {
+  transform: scale(1.25);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === ENCABEZADO === */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 80px;
+  padding: 20px;
+}
+
+header h1 {
+  font-family: 'Oleo Script', cursive;/**/
+  font-weight: normal;
+  font-size: 38px;
+  color: #2a3e42;
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos hijos horizontalmente */
+  margin: 0 auto; /* Centra el contenedor .contenido en la página */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+  border-radius: 8px;
+}
+
+header .return-button {
+  width: 35px;
+  height: 35px;
+  background-image: url('iconos/Retorno.png'); /* Asegúrate de que la ruta sea correcta */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  z-index: 1003;
+  background-color: transparent;
+  
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Oleo Script', sans-serif;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  margin-left: 80px;
+}
+
+header button:hover {
+  transform: scale(1.25);
+}
+
+select, input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  font-size: 14px;
+}
+
+/* === MAPA === */
+/* === MAPA === */
+.mapa-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 100%;
+  min-height: 400px; /* Puedes ajustar según el alto que desees */
+}
+
+.mapa-container {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  padding: 10px;
+}
+
+.mapa-container img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+
+
+.ciudad-btn {
+  position: absolute;
+  background-color: #637983;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.ciudad-btn:hover {
+  background-color: #A2B0BE;
+}
+
+/*CONTENEDOR  LEYENDA*/
+.mapa-contenedor-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.mapa-container {
+  position: relative;
+  max-width: 660px;
+}
+
+/*LEYENDA*/
+.leyenda-interactiva {
+  background: transparent;
+  border-radius: 12px;
+  padding: 15px 20px;
+  font-family: 'Sansation', sans-serif;
+  max-width: 260px;
+  max-height: 300px; /* ✅ Limita la altura */
+  overflow-y: auto;  /* ✅ Scroll vertical si se pasa */
+
+  
+  border: 3px solid #637983;
+  overflow-y: scroll; /* Permite desplazamiento vertical */
+  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+/* Opcional: estiliza la barra de scroll */
+.leyenda-interactiva::-webkit-scrollbar {
+  width: 6px;
+  display: none; /* Chrome, Safari y Opera */
+}
+
+.leyenda-interactiva::-webkit-scrollbar-thumb {
+  background-color: #637983;
+  border-radius: 4px;
+  display: none; /* Chrome, Safari y Opera */
+}
+
+.leyenda-interactiva::-webkit-scrollbar-track {
+  background: transparent;
+  display: none; /* Chrome, Safari y Opera */
+}
+
+/*Titulo*/
+.leyenda-interactiva h3 {
+  font-size: 18px;
+  color: #2a3e42;
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.leyenda-interactiva ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.leyenda-interactiva li {
+  margin: 10px 0;
+  text-align: center;
+}
+
+/*Botones*/
+.leyenda-interactiva button {
+  background-color: transparent;
+  color: #2a3e42;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 15px;
+  transition: background 0.3s;
+
+  
+
+  
+  border-bottom: 2px dotted #637983;
+  text-align: center;
+}
+
+.leyenda-interactiva button:hover {
+  transform: scale(1.2);
+}
+
+
+
+
+
+
+/* === MODAL === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(162, 176, 190, 0.6); /* Color #A2B0BE con 60% de opacidad */
+}
+
+.modal-content {
+  background: #EAE4D5E5;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  margin: 1% auto;
+  border-radius: 12px;
+  position: relative;
+  font-family: 'Sansation', sans-serif;
+}
+
+.modal-content h3 {
+  text-align: center;
+  font-family: 'Oleo Script', sans-serif;
+  
+  font-weight: normal;
+  font-size: 28px;
+  color: #2a3e42;
+}
+
+.modal-content ul {
+  list-style-type: none; /* Esto elimina los puntos/viñetas */
+  /*padding: 0;           /* Opcional: Elimina el padding predeterminado */
+  /*margin: 0;            /* Opcional: Elimina el margen predeterminado */
+}
+
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 38px;
+  cursor: pointer;
+  color: #c0392b;
+}
+
+.close:hover {
+  color: #922b21;
+  transform: scale(1.25);
+}
+
+/*==============Boton GoogleMaps==============*/
+.btn-mapa {
+  background-color: #637983;
+  color: #EAE4D5;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+/* Aplicado al párrafo o a un div que envuelva el botón */
+.modal-contenido p { /* O si tienes un div, usa .modal-contenido .mi-contenedor-de-boton */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente los elementos hijos */
+  align-items: center; /* Centra verticalmente si el párrafo/contenedor tiene altura */
+}
+
+.btn-mapa i {
+  font-size: 18px;
+  color: #EAE4D5;
+  transition: transform 0.2s ease;
+}
+
+.btn-mapa:hover i {
+  transform: scale(1.2);
+  color: #A2B0BE;
+}
+
+
+
+/* POSICIONES (ajústalas manualmente según tu mapa por estado) */
+/*--Zulia--*/
+.ciudad-cabimas { top: 44%; left: 70%; }
+.ciudad-Cuatricentenario { top: 38%; left: 38%; }
+.ciudad-ElProgreso { top: 60%; left: 42%; }
+.ciudad-LaRepelona { top: 80%; left: 35%; }
+.ciudad-Perijá { top: 55%; left: 28%; }
+.ciudad-LosJobitos { top: 46%; left: 38%; }
+.ciudad-SanFrancisco { top: 30%; left: 42%; }
+.ciudad-Zipayare { top: 60%; left: 84%; }
+
+/*--Lara--*/
+.ciudad-CALLE23 { top: 45%; left: 50%; }
+.ciudad-AltodePuebloNuevo { top: 55%; left: 26%; }
+.ciudad-Carora { top: 45%; left: 40%; }
+.ciudad-Cauderales { top: 70%; left: 50%; }
+.ciudad-Duaca { top: 40%; left: 82%; }
+.ciudad-ElCarmen { top: 22%; left: 50%; }
+.ciudad-LaMontanita { top: 24%; left: 80%; }
+.ciudad-LaReluciente { top: 60%; left: 78%; }
+.ciudad-LaRepresa { top: 78%; left: 64%; }
+.ciudad-Moroturo { top: 45%; left: 68%; }
+.ciudad-SanJacinto { top: 70%; left: 82%; }
+
+/*--Amazonas--*/
+.ciudad-PuertoAyacucho { top: 12%; left: 16%; }
+
+/*--Anzoátegui--*/
+.ciudad-ElTigrito { top: 52%; left: 54%; }
+.ciudad-PuertolaCruz { top: 8%; left: 40%; }
+.ciudad-Orinoco { top: 88%; left: 38%; }
+
+/*--Apure--*/
+.ciudad-BarioAntonioJosédeSucre { top: 30%; left: 50%; }
+.ciudad-ElNegro { top: 60%; left: 80%; }
+.ciudad-Elorza { top: 52%; left: 50%; }
+.ciudad-Guasdualito { top: 44%; left: 30%; }
+.ciudad-SanFernando { top: 26%; left: 70%; }
+
+/*--Aragua--*/
+.ciudad-CarmendeCura { top: 44%; left: 28%; }
+.ciudad-BarrioSanCarlos { top: 33%; left: 22%; }             /*Coordenadas original*/
+.ciudad-Coromoto { top: 30%; left: 22%; }
+.ciudad-DIEZDEDICIEMBRE { top: 36%; left: 22%; }
+.ciudad-LaPica { top: 38.5%; left: 42%; }             /*Coordenadas original*/
+.ciudad-PaloNegroCentro { top: 35.5%; left: 42%; }
+.ciudad-RosariodePaya { top: 50%; left: 62%; }
+.ciudad-PuebloNuevo { top: 46%; left: 49%; }
+.ciudad-SanMateo { top: 25%; left: 42%; }
+.ciudad-SantaRita { top: 56%; left: 66%; }
+.ciudad-Zuata { top: 24%; left: 16%; }
+
+/*--Barinas--*/
+.ciudad-Barrancas { top: 21%; left: 41%; }
+.ciudad-Barinas { top: 30%; left: 38%; }
+.ciudad-Barinitas { top: 22%; left: 32%; }
+.ciudad-Guamito { top: 48%; left: 60%; }
+.ciudad-LosRastrojos { top: 52%; left: 80%; }
+
+/*--Bolivar--*/
+.ciudad-CUYUNÍ { top: 12%; left: 55%; }             /*Coordenadas original*/
+.ciudad-LaSabanita { top: 19%; left: 55%; }
+.ciudad-CaicaradelOrinoco { top: 22%; left: 24%; }
+.ciudad-PuertoOrdaz { top: 8%; left: 66%; }
+.ciudad-SanFélix { top: 70%; left: 77%; }
+.ciudad-SantaElena { top: 44%; left: 80%; }
+.ciudad-Tumerremo { top: 26%; left: 86%; }
+.ciudad-SantaRosadelBuey { top: 80%; left: 64%; }
+
+/*--Carabobo--*/
+.ciudad-Alpargatón { top: 30%; left: 30%; }
+.ciudad-Bejuma { top: 58%; left: 28%; }
+.ciudad-Boqueron { top: 50%; left: 22%; }
+.ciudad-CampoCarabobo { top: 66%; left: 16%; }
+.ciudad-Canoabo { top: 54%; left: 70%; }
+.ciudad-Chirgua { top: 32%; left: 44%; }
+.ciudad-Guacara { top: 50%; left: 58%; }
+.ciudad-Güigüe { top: 68%; left: 66%; }
+.ciudad-Juaniquero { top: 42%; left: 52%; }
+.ciudad-LaCompañía { top: 78%; left: 36%; }
+.ciudad-LaJobera { top: 76%; left: 50%; }
+.ciudad-LaLagunita { top: 42%; left: 42%; }
+.ciudad-LaSabana { top: 70%; left: 37%; }
+.ciudad-LasTrincheras { top: 86%; left: 76%; }
+.ciudad-LosCaracaros { top: 76%; left: 72%; }
+.ciudad-Mariara { top: 42%; left: 74%; }
+.ciudad-Morón { top: 20%; left: 30%; }
+.ciudad-Patanemo { top: 60%; left: 50%; }
+
+.ciudad-PuertoCabello { top: 24%; left: 48%; }
+
+.ciudad-SanEsteban { top: 40%; left: 22%; }
+.ciudad-SanJoaquin { top: 45%; left: 64%; }
+.ciudad-SanPablo { top: 50%; left: 32%; }
+.ciudad-Tocuyito { top: 60%; left: 38%; }
+
+.ciudad-Valencia { top: 52%; left: 46%; }
+
+/*--Cojedes--*/
+.ciudad-BuenosAires { top: 30%; left: 30%; }
+.ciudad-BarrioEzequielZamora { top: 24%; left: 68%; }
+.ciudad-BarrioNuevo { top: 44%; left: 41%; }
+.ciudad-ElBaul { top: 69%; left: 56%; }
+.ciudad-ElMuertico { top: 36%; left: 68%; }
+.ciudad-ElPenitente { top: 60%; left: 60%; }
+.ciudad-Genareño { top: 76%; left: 60%; }
+.ciudad-LaChorrera { top: 70%; left: 30%; }
+.ciudad-LasVegas { top: 24%; left: 14%; }
+.ciudad-LosColorados { top: 80%; left: 40%; }
+.ciudad-Manrique { top: 20%; left: 46%; }
+.ciudad-PuenteOnoto { top: 48%; left: 66%; }
+.ciudad-SanCarlos { top: 16%; left: 58%; }
+.ciudad-Tinaco { top: 28%; left: 48%; }
+.ciudad-Tinaquillo { top: 12%; left: 54%; }
+
+/*--Delta Amacuro--*/
+.ciudad-Tucupita { top: 44%; left: 30%; }
+
+
+
+/*--Distrito Capital--*/
+.ciudad-ElCementerio { top: 48%; left: 30%; }
+.ciudad-ElValle { top: 48%; left: 30%; }
+.ciudad-LasAdjuntas { top: 48%; left: 30%; }
+.ciudad-LaVega { top: 48%; left: 30%; }
+.ciudad-LosFlores { top: 48%; left: 30%; }
+.ciudad-Petare { top: 48%; left: 30%; }
+
+/*--Falcon--*/
+.ciudad-BuenaVista { top: 60%; left: 60%; }
+.ciudad-Chichiriviche { top: 66%; left: 90%; }
+.ciudad-Churuguara { top: 70%; left: 54%; }
+.ciudad-Coro { top: 44%; left: 50%; }
+.ciudad-Dabajuro { top: 60%; left: 22%; }
+.ciudad-ElMene { top: 52%; left: 26%; }
+.ciudad-JacuraPuebloNuevo { top: 14%; left: 40%; }
+.ciudad-LaGuacharaca { top: 72%; left: 38%; }
+.ciudad-Mirimire { top: 56%; left: 80%; }
+.ciudad-PalmaSola { top: 35%; left: 50%; }
+.ciudad-PuertoCumarebo { top: 44%; left: 60%; }
+.ciudad-PuntoFijo { top: 32%; left: 40%; }
+.ciudad-SantaCruzdeBucaral { top: 70%; left: 68%; }
+.ciudad-SectorUnión { top: 63%; left: 74%; }
+.ciudad-Tocópero { top: 38%; left: 66%; }
+.ciudad-Tucacas { top: 60%; left: 46%; }
+.ciudad-Yaracal { top: 62%; left: 84%; }
+
+/*--Frontera Colombia--*/
+.ciudad-Cali { top: 53%; left: 16%; }
+.ciudad-Cartagena { top: 20%; left: 24%; }
+.ciudad-CaucasiaAntioquia { top: 38%; left: 44%; }
+.ciudad-Macaján { top: 29%; left: 34%; }
+.ciudad-LaSierpe { top: 42%; left: 54%; }
+.ciudad-Manguitos { top: 14%; left: 38%; }
+.ciudad-Manizales { top: 44%; left: 22%; }
+.ciudad-ManuelaBeltránBarranquilla { top: 58%; left: 58%; }
+.ciudad-Medellín { top: 40%; left: 22%; }
+.ciudad-Pasto { top: 64%; left: 12%; }
+.ciudad-SincelejoSantaMaría { top: 54%; left: 58%; }
+.ciudad-Tesoro { top: 42%; left: 41%; }
+.ciudad-Soacha { top: 44%; left: 32%; }
+.ciudad-Valledupar { top: 39%; left: 31%; }
+.ciudad-VilladelRosarioCucuta { top: 33%; left: 34%; }
+.ciudad-Villavicencio { top: 24%; left: 32%; }
+
+/*--Guarico--*/
+.ciudad-AltagraciadeOrituco { top: 12%; left: 54%; }
+.ciudad-SanJuandelosMorros { top: 8%; left: 22%; }
+.ciudad-Tiguigue { top: 24%; left: 54%; }
+.ciudad-ValledelaPascua { top: 38%; left: 60%; }
+.ciudad-Zaraza { top: 30%; left: 80%; }
+
+/*--Merida--*/
+.ciudad-ElVigia { top: 32%; left: 40%; }
+.ciudad-Chamita { top: 52%; left: 48%; }
+.ciudad-Jají { top: 44%; left: 60%; }
+.ciudad-LosPróceres { top: 66%; left: 56%; }
+
+/*--Miranda--*/
+.ciudad-Caucagua { top: 54%; left: 50%; }
+.ciudad-Charallave { top: 60%; left: 22%; }
+.ciudad-Guarenas { top: 29%; left: 32%; }
+.ciudad-Guatire { top: 32%; left: 41%; }
+.ciudad-LaMata { top: 78%; left: 32%; }
+.ciudad-LosTeques { top: 56%; left: 70%; }
+.ciudad-OcumaredelTuy { top: 70%; left: 27%; }
+.ciudad-SantaLucía { top: 52%; left: 34%; }
+
+/*--Monagas--*/
+.ciudad-Maturin { top: 40%; left: 50%; }
+
+/*--Nueva Esparta--*/
+.ciudad-Porlamar { top: 46%; left: 78%; }
+
+/*--Portuguesa--*/
+.ciudad-Acarigua { top: 20%; left: 60%; }
+.ciudad-Biscucuy { top: 30%; left: 16%; }
+.ciudad-CorozoLargo { top: 59%; left: 80%; }
+.ciudad-Guanare { top: 50%; left: 30%; }
+.ciudad-Guanarito { top: 66%; left: 58%; }
+.ciudad-LosPuertosdePayara { top: 42%; left: 30%; }
+.ciudad-SanJosédelasMajaguas { top: 70%; left: 80%; }
+.ciudad-SanRafaeldeOnoto { top: 12%; left: 68%; }
+.ciudad-TapadePiedra { top: 38%; left: 80%; }
+
+/*--Sucre--*/
+.ciudad-Carúpano { top: 22%; left: 46%; }
+.ciudad-ElMango { top: 18%; left: 80%; }
+.ciudad-LosAltosdeSucre { top: 72%; left: 18%; }
+.ciudad-SanPedrito { top: 62%; left: 28%; }
+.ciudad-SantaFe { top: 52%; left: 18%; }
+.ciudad-Zurita { top: 62%; left: 19%; }
+
+/*--Tachira--*/
+.ciudad-SanAntonio { top: 68%; left: 8%; }
+.ciudad-SanCristobal { top: 68%; left: 26%; }
+
+/*--Trujillo--*/
+.ciudad-Batatal { top: 30%; left: 30%; }
+.ciudad-ElCenizo { top: 50%; left: 14%; }
+.ciudad-SabanadeMendoza { top: 30%; left: 80%; }
+.ciudad-Valera { top: 60%; left: 50%; }
+
+/*--Vargas--*/
+.ciudad-CatialaMar { top: 36%; left: 36%; }
+
+/*--Yaracuy--*/
+.ciudad-Albarico { top: 40%; left: 30%; }
+.ciudad-Aroa { top: 38%; left: 38%; }
+.ciudad-Carabobo { top: 20%; left: 50%; }
+.ciudad-Chivacoa { top: 63%; left: 42%; }
+.ciudad-ElGuayabo { top: 14%; left: 58%; }
+.ciudad-Escondido { top: 50%; left: 68%; }
+.ciudad-LaCandelaria { top: 50%; left: 80%; }
+.ciudad-LaIndependencia { top: 50%; left: 50%; }
+.ciudad-LaOcho { top: 30%; left: 68%; }
+.ciudad-LaRaya { top: 40%; left: 70%; }
+.ciudad-Marín { top: 80%; left: 60%; }
+.ciudad-Nirgua { top: 76%; left: 70%; }
+.ciudad-Obonte { top: 70%; left: 44%; }
+.ciudad-Salom { top: 56%; left: 40%; }
+.ciudad-SanFelipe { top: 44%; left: 54%; }
+.ciudad-SanJosédeCarúpano { top: 68%; left: 70%; }
+.ciudad-SanMateodeNirgua { top: 80%; left: 44%; }
+.ciudad-Temerla { top: 22%; left: 80%; }
+.ciudad-Yaritagua { top: 70%; left: 22%; }
+
+
+
+
+
+
+/* ----- CONTENEDOR DEL BUSCADOR Y FILTROS ----- */
+.filtros-container {
+    width: 90%;
+    margin: 30px auto 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    font-family: 'Sansation', sans-serif;
+    color: #EAE4D5;
+}
+
+/* ----- SELECT Y INPUT ----- */
+.filtros-container select,
+.filtros-container input[type="text"] {
+    padding: 12px 16px;
+    font-size: 15px;
+    /*border: 1px solid #ccc;/**/
+    border-radius: 8px;
+    background-color: #637983;
+    /*box-shadow: 0 2px 6px rgba(0,0,0,0.1);/**/
+    transition: all 0.3s ease;
+    min-width: 220px;
+
+
+    color: #EAE4D5;
+}
+
+
+
+.filtros-container select,
+.filtros-container {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    background-repeat: no-repeat;
+    background-image: url('iconos/Barrita.png'); /* ← reemplaza por tu imagen */
+    background-position: right 12px center;
+    background-size: 18px;
+    cursor: pointer;
+
+
+    color: #EAE4D5;
+    border-radius: 10px;
+}
+
+.filtros-container input[type="text"] {
+    flex: 1;
+    max-width: 500px;
+
+
+    color: #EAE4D5;
+    border-radius: 10px;
+}
+
+.filtros-container select:focus,
+.filtros-container input[type="text"]:focus {
+    border-color: #4A90E2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    outline: none;
+
+    
+    color: #EAE4D5;
+}
+
+/* Escondido por defecto pero con estilo si se activa */
+#selector-estado {
+    display: none;
+
+
+    
+    color: #EAE4D5;
+}

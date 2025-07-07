@@ -1,0 +1,612 @@
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&family=Oleo+Script&display=swap');
+
+/* === FONDO CON CAPAS === */
+/* Estilos generales */
+body {
+    font-family: 'Sansation', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+/* Estilos generales */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('iconos/Fonfo_Mapa_Color.png'); /* tu imagen */
+    background-size: cover; /* Mostrar la imagen completa */
+    background-repeat: no-repeat;
+    background-position: top;
+    opacity: 0.7;
+    z-index: -1;
+    
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sansation', sans-serif;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sansation', sans-serif;
+}
+
+.content {
+    margin-left: 80px;
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === SIDEBAR === */
+/* Botón hamburguesa (puedes ocultarlo si ya hay barra de íconos) */
+.menu-toggle {
+    display: none;
+}
+
+/* Barra lateral con íconos */
+.icon-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100vh;
+    background-color: #263C3EA6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    z-index: 1003;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    margin: 10px 0;
+    cursor: pointer;
+    padding: 5px;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.icon-btn:hover {
+    background-color: #2a3e42;
+}
+
+.icon-btn img {
+    width: 40px;
+    height: 40px;
+    /*filter: invert(1);/**/
+}
+
+/* Panel emergente */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: transparent/*#263C3EA6/**/;
+    color: white;
+    padding: 20px;
+    z-index: 1004;
+    transition: left 0.3s ease;
+}
+
+.sidebar.active {
+    left: 100px; /* aparece justo al lado del menú de íconos */
+}
+
+.sidebar h2 {
+    font-family: 'Oleo Script', cursive;
+    color: white;
+    
+    font-weight: normal;
+    font-size: 38px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+
+    
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.sidebar a:hover {
+    background-color: #2a3e42;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1002;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar .close-btn {
+    padding: 15px 25px;
+    border: none;
+    /*border-radius: 10px;/**/
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: background 0.3s;
+
+    border-radius: 15px 15px 40px 15px;
+    margin: 10px;
+}
+
+.sidebar .close-btn:hover {
+    transform: scale(1.25);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------- ENCABEZADO ---------- */
+header {
+    margin: 20px 0;
+    padding: 15px 30px;
+    border-radius: 12px;
+    color: #192E2F;
+    font-family: 'Rakkas', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-family: 'Oleo Script', cursive;/**/
+    font-weight: normal;
+    font-size: 38px;
+    color: #2a3e42;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos hijos horizontalmente */
+    margin: 0 auto; /* Centra el contenedor .contenido en la página */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    border-radius: 8px;
+}
+
+header .return-button {
+    width: 35px;
+    height: 35px;
+    background-image: url('iconos/Retorno.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    z-index: 1003;
+    background-color: transparent;
+    
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Oleo Script', sans-serif;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  
+  header button:hover {
+    transform: scale(1.25);
+  }
+
+/* ---------- CONTROLES DE FILTRO ---------- */
+/* Contenedor general de filtros */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px auto;
+    width: 90%;
+}
+
+/* Cada control */
+.filtro-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Sansation', sans-serif;
+    color: #192E2F;
+    min-width: 180px;
+}
+
+/* Selects y slider */
+.filtro-item select,
+.filtro-item input[type="range"] {
+    width: 100%;
+    padding: 10px 40px 10px 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #637983;
+    color: #EAE4D5;
+    font-size: 15px;
+    background-image: url('iconos/Barrita.png');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    appearance: none;
+    outline: none;
+}
+
+
+/* Contenedor slider con valor */
+.slider-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.slider-contenedor span {
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+/*-------------------BARRA DE DISTANCIA-------------------*/
+/* Estilo separado solo para el contenedor del slider */
+
+
+/* Estilo para el input range */
+.slider-contenedor input[type=range] {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 8px;
+    background: linear-gradient(90deg, #192E2F, #A2B0BE, #192E2F);
+    border-radius: 8px;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.slider-contenedor input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background: #ffffff;
+    border: 2px solid #3366ff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+
+.slider-contenedor input[type=range]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* Valor numérico de la distancia */
+.slider-contenedor span {
+    font-weight: bold;
+    color: #3366ff;
+}
+
+
+
+
+button {
+    background: #637983;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos hijos horizontalmente */
+    margin: 0 auto; /* Centra el contenedor .contenido en la página */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    border-radius: 8px;
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+/* ---------- TABLA ---------- */
+/* ---------- TABLA DE DATOS ESTILO MODERNO ---------- */
+/* Evita conflictos */
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px 6px;
+}
+
+/* Anchos de columnas sincronizados border-right: 10px;*/
+.col1 { width: 30%; }
+.col2 { width: 10%; }
+.col3 { width: 20%; }
+.col4 { width: 20%; }
+.col5 { width: 10%; }
+
+/* Tabla contenedor con sombra */
+.tabla-contenedor {
+    width: 95%;
+    margin: 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+.tabla-cabecera th {
+    background: linear-gradient(to right, #637983, #637983);
+    color: white;
+    font-size: 18px;
+    font-family: 'Sansation', sans-serif;
+    border-radius: 30px 0 30px 0;
+    font-weight: normal;
+}
+
+/* Cuerpo scroll */
+.tabla-scroll {
+    max-height: 300px;
+    overflow-y: scroll; /* Permite desplazamiento vertical */
+    scrollbar-width: none;     /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+    
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 3px solid #637983;
+}
+
+.tabla-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Opera */
+}
+
+/* Cuerpo tabla */
+.tabla-cuerpo td {
+    background: transparent;
+    font-family: 'Sansation', sans-serif;
+    font-size: 16px;
+    color: #333;
+
+
+    border-bottom: 1px solid #637983;
+}
+
+td.espacio, th.espacio {
+    width: 10px; /* o el ancho que prefieras */
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+td.espacio {border-bottom: 1px solid #637983;}
+
+
+/* Botones */
+.btn-detalles {
+    margin-right: 16px;
+}
+
+
+/* ---------- BOTONES ---------- */
+.btn-detalles {
+    background: #637983;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn-detalles:hover {
+    background: #A2B0BE;
+}
+
+.btn-mapa i {
+    font-size: 18px;
+    color: #637983;
+    transition: transform 0.2s ease;
+}
+.btn-mapa:hover i {
+    transform: scale(1.2);
+    color: #A2B0BE;
+}
+
+
+
+
+
+/* ---------- MODAL DETALLES ---------- */
+.modal-detalles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    backdrop-filter: blur(3px);
+}
+
+.modal-contenido {
+    background-color: #fff;
+    padding: 30px 25px;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 90%;
+    font-family: 'Sansation', sans-serif;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 26px;
+    color: #c0392b;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.cerrar-modal:hover {
+    color: #e74c3c;
+}
+
+#detallesContenido p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+#detallesContenido a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#detallesContenido a:hover {
+    text-decoration: underline;
+}
+
+.detalles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+}
+
+
+/* ---------- MODAL DE CARGA ---------- */
+.loading-modal {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'Sansation', sans-serif;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.loading-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.loading-bar-inner {
+    height: 100%;
+    width: 0%;
+    background-color: #4A90E2;
+    transition: width 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
