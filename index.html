@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    <link rel="stylesheet" href="Formulario.css"> <!-- Enlace al archivo de estilos CSS -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="flex items-center justify-center h-screen bg-gray-100">
+    <div class="wrapper">
+        <div class="container">
+            <h1>Bienvenido</h1>
+            <p>Al Geolocalizador de las Asambleas Congregadas en Venezuela</p>
+
+            <!-- Botón para iniciar sesión -->
+            <button onclick="checkSession()" class="btn-login">Iniciar Sesión</button>
+
+            <!-- Botón para registrarse -->
+            <button onclick="location.href='Registrarse.php'" class="btn-register" style="background-color: #4D6164;">Registrarse</button>
+
+            <!-- Botón para ingresar como invitado -->
+            <button onclick="location.href='Menu/index.php?guest=true'" class="btn-guest">Ingresar como Invitado</button>
+
+        </div>
+    </div>
+
+    <script>
+        // Función para verificar si el usuario ya inició sesión previamente
+        function checkSession() {
+            let userSession = localStorage.getItem("userLogged");
+            if (userSession) {
+                window.location.href = "Menu/index.php";
+            } else {
+                window.location.href = "Iniciar_Sesion.php";
+            }
+        }
+    </script>
+</body>
+</html>

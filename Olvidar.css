@@ -1,0 +1,191 @@
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+/* Estilos generales */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('fondo_mapa.png'); /* tu imagen */
+    background-size: cover; /* Mostrar la imagen completa */
+    background-repeat: no-repeat;
+    background-position: top;
+    opacity: 0.7;
+    z-index: -1;
+
+    
+    font-family: 'Oleo Script', sans-serif;
+    padding: 40px;
+    max-width: 500px;
+    margin: auto;
+}
+
+
+/* Capa animada sobre el fondo */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, #CD977B, #192E2F, #637983, #A2B0BE);
+    background-size: 800% 800%;
+    animation: animarGradiente 15s ease infinite;
+    opacity: 0.8; /* Ajusta opacidad según lo que quieras */
+    z-index: 0;
+}
+
+/* Asegura que el contenido esté por encima del overlay */
+.container, .contenido, form {
+    position: relative;
+    z-index: 1;
+}
+
+/* Animación de gradiente */
+@keyframes animarGradiente {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Contenido
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */ 
+body {
+    font-family: 'Oleo Script', sans-serif;
+    padding: 40px;
+    max-width: 500px;
+    margin: auto;
+}/**/
+
+input, button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#verificacion {
+    display: none;
+}
+
+input, button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #verificacion {
+    display: none;
+  }
+
+
+
+
+
+
+
+  
+/* Para el contenedor principal */
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del formulario */
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Estilos para los títulos */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los campos de entrada */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Estilos para los botones */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Botón de registro */
+.btn-register {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-register:hover {
+    background-color: #218838;
+}
+
+/* Botón para regresar */
+.btn-back {
+    background-color: #6c757d;
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-back:hover {
+    background-color: #5a6268;
+}
+
+/* Mensaje de validación */
+#message {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}

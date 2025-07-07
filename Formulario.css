@@ -1,0 +1,445 @@
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+body {
+    font-family: 'Sansation', cursive;/**/
+    font-weight: normal;
+}
+
+/* Estilos generales */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Fonfo_Mapa.jpg'); /* tu imagen */
+    background-size: cover; /* Mostrar la imagen completa */
+    background-repeat: no-repeat;
+    background-position: top;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+/* Asegura que el contenido esté por encima del overlay */
+.container, .contenido, form {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+/* Contenedor principal */
+.container {
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 400px;
+    margin: 60px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+    
+    background-color: white;
+    text-align: center;
+}
+
+
+/* Título */
+h1 {
+    font-family: 'Oleo Script', cursive;
+    font-weight: normal;
+    font-size: 38px;
+    color: #2a3e42;
+}
+
+/* Texto descriptivo */
+p {
+    font-size: 16px;
+    color: #4b5563;
+    margin-bottom: 20px;
+    font-family: 'Sansation', cursive;
+}
+
+/* Botones */
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Colores de los botones */
+.btn-login {
+    background-color: #4D6164; /* Azul */
+}
+
+.btn-register {
+    background-color: #4D6164; /* Verde */
+}
+
+.btn-guest {
+    background-color: #4D6164; /* Gris */
+}
+
+/* Efecto hover */
+button:hover {
+    opacity: 0.9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Iniciar Sesion
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */ 
+/* Para el contenedor principal */
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Contenedor del formulario */
+.container_Sesion {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+
+    align-items: center; /* Centra los elementos hijos horizontalmente */
+    margin: 0 auto; /* Centra el contenedor .contenido en la página */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* Estilos para los títulos */
+.container_Sesion h1 {
+    margin-bottom: 10px;
+
+    font-family: 'Oleo Script', cursive;/**/
+    font-weight: normal;
+    font-size: 38px;
+    color: #2a3e42;
+}
+
+.container_Sesion p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los campos de entrada */
+.container_Sesion form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container_Sesion label {
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.container_Sesion input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Estilos para los botones */
+.container_Sesion button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Botón de registro */
+.container_Sesion .btn-register {
+    background-color: #28a745;
+    color: white;
+}
+
+.container_Sesion .btn-register:hover {
+    background-color: #218838;
+}
+
+/* Botón para regresar */
+.container_Sesion .btn-back {
+    background-color: #6c757d;
+    color: white;
+    margin-top: 10px;
+}
+
+.container_Sesion .btn-back:hover {
+    background-color: #5a6268;
+}
+
+/* Mensaje de validación */
+.container_Sesion #message {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+.container_Sesion .login-container {
+    
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+
+}
+
+/* Estilos para los campos del formulario */
+.container_Sesion input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilos para los enlaces */
+.container_Sesion a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.container_Sesion a:hover {
+    text-decoration: underline;
+}
+
+/*¿Olvidaste tu contraseña?*/
+.forgot-password-link {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Registrarse
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */ 
+/* Centrado total de la pantalla */
+.wrapperRegistro {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;  /* Centrado horizontal */
+    align-items: center;      /* Centrado vertical */
+    padding: 20px;            /* Espacio en móviles */
+    box-sizing: border-box;
+}
+
+/* Contenedor del formulario */
+.container_Registro {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    height: 600px;
+
+    align-items: center; /* Centra los elementos hijos horizontalmente */
+    margin: 0 auto; /* Centra el contenedor .contenido en la página */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* Estilos para los títulos */
+.container_Registro h1 {
+    margin-bottom: 10px;
+    
+    font-family: 'Oleo Script', cursive;/**/
+    font-weight: normal;
+    font-size: 38px;
+    color: #2a3e42;
+}
+
+.container_Registro p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los campos de entrada */
+.container_Registro form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container_Registro label {
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.container_Registro input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Estilos para los botones */
+.container_Registro button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Botón de registro */
+.container_Registro .btn-register {
+    background-color: #28a745;
+    color: white;
+}
+
+.container_Registro .btn-register:hover {
+    background-color: #218838;
+}
+
+/* Botón para regresar */
+.container_Registro .btn-back {
+    background-color: #6c757d;
+    color: white;
+    margin-top: 10px;
+}
+
+.container_Registro .btn-back:hover {
+    background-color: #5a6268;
+}
+
+/* Mensaje de validación */
+.container_Registro #message {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Adaptación para teléfonos pequeños (270px x 600px) */
+/* Estilo específico para pantalla tipo teléfono (270px x 600px) */
+@media screen and (max-width: 280px) {
+    .wrapper, .wrapperRegistro {
+      height: 600px;
+      width: 260px;
+      margin: 0 auto;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    .container_Sesion,
+    .container_Registro {
+      width: 100%;
+      height: auto;
+      padding: 20px 15px;
+      border-radius: 10px;
+      box-shadow: none;
+      font-size: 14px;
+    }
+  
+    .container_Sesion h1,
+    .container_Registro h1 {
+      font-size: 24px;
+    }
+  
+    .container_Sesion input,
+    .container_Registro input {
+      font-size: 13px;
+      padding: 4px;
+    }
+  
+    .container_Sesion button,
+    .container_Registro button {
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    .container_Sesion p,
+    .container_Registro p {
+      font-size: 12px;
+    }
+  
+    .forgot-password-link {
+      font-size: 12px;
+    }
+}
+  
