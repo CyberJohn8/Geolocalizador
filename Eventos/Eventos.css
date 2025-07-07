@@ -1,0 +1,418 @@
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&family=Oleo+Script&display=swap');
+
+
+
+
+/* === SIDEBAR === */
+/* Botón hamburguesa (puedes ocultarlo si ya hay barra de íconos) */
+.menu-toggle {
+    display: none;
+}
+
+/* Barra lateral con íconos */
+.icon-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100vh;
+    background-color: #263C3EA6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    z-index: 1003;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    margin: 10px 0;
+    cursor: pointer;
+    padding: 5px;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.icon-btn:hover {
+    background-color: #2a3e42;
+}
+
+.icon-btn img {
+    width: 40px;
+    height: 40px;
+    /*filter: invert(1);/**/
+}
+
+/* Panel emergente */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: transparent/*#263C3EA6/**/;
+    color: white;
+    padding: 20px;
+    z-index: 1004;
+    transition: left 0.3s ease;
+}
+
+.sidebar.active {
+    left: 100px; /* aparece justo al lado del menú de íconos */
+}
+
+.sidebar h2 {
+    font-family: 'Oleo Script', cursive;
+    color: white;
+    
+    font-weight: normal;
+    font-size: 38px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+
+    
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.sidebar a:hover {
+    background-color: #2a3e42;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1002;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar .close-btn {
+    padding: 15px 25px;
+    border: none;
+    /*border-radius: 10px;/**/
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: background 0.3s;
+
+    border-radius: 15px 15px 40px 15px;
+    margin: 10px;
+}
+
+.sidebar .close-btn:hover {
+    transform: scale(1.25);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&family=Oleo+Script&display=swap');
+
+/* === FONDO === */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Sansation', sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Fondo con imagen desenfocada */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*background-image: url('iconos/Fonfo_Mapa_Color.jpg');/**/
+  background-image: url('iconos/Fonfo_Mapa_Color.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+/* === LAYOUT GENERAL === */
+.evento-page {
+    display: flex;
+    height: auto;
+    min-height: 100vh;
+    max-width: 1400px;   /* evita que se extienda demasiado en pantallas grandes */
+    margin: 0 auto;       /* centrado horizontal */
+    /*box-shadow: 0 0 10px rgba(0,0,0,0.05); /* opcional para resaltar */
+    /*background-color: rgba(255,255,255,0.8); /* fondo opcional */
+    /*border-radius: 10px;  /* bordes redondeados opcionales */
+    
+    
+    width: 80%;
+    margin-left: 180px;
+}
+  
+
+
+
+/* === CONTENIDO PRINCIPAL === */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === ENCABEZADO === */
+.event-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.event-header h1 {
+  font-family: 'Oleo Script', cursive;
+  flex-grow: 1;
+  text-align: center;
+  
+  font-weight: normal;
+  font-size: 38px;
+  color: #2a3e42;
+}
+
+.return-button {
+  background: url('iconos/Retorno.png') no-repeat center;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+.return-button:hover {
+  transform: scale(1.25);
+}
+
+.user-icon img {
+  width: 32px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.crud-btn {
+    background-color: #5a7684;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.crud-btn:hover {
+    background-color: #3b5c68;
+}
+
+/*.caracas-time {
+    font-size: 15px;
+    color: #444;
+    font-weight: bold;
+    text-align: right;
+    line-height: 1.4;
+}/**/
+
+
+
+
+
+.caracas-time {
+  text-align: center; /* Si el contenido dentro es texto o inline */
+  margin-top: 15px; /* Para darle un poco de espacio del header */
+  /* Otros estilos que ya tengas */
+}
+
+/* === CONTENIDO DE LA PÁGINA === */
+.event-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* === LISTA DE EVENTOS === */
+.event-list {
+  /* Propiedades que ya tenías */
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  max-height: calc(100vh - var(--header-height, 150px) - var(--some-other-margin, 40px)); /* O tu altura específica */
+
+  /* --- INICIO: Propiedades para hacer el scroll invisible --- */
+
+  /* Para navegadores basados en Webkit (Chrome, Safari, Edge, Opera) */
+  &::-webkit-scrollbar {
+    width: 0; /* Ancho de la barra de desplazamiento vertical */
+    height: 0; /* Altura de la barra de desplazamiento horizontal */
+  }
+
+  /* Para Firefox */
+  scrollbar-width: none; /* 'none' para ocultar, 'thin' para una barra delgada */
+  /* scrollbar-color: transparent transparent; /* Opcional: para asegurar que los "pulgares" también sean transparentes */
+
+  /* Para Microsoft Edge (antiguo) y algunos otros */
+  -ms-overflow-style: none; /* Elimina la barra de desplazamiento de IE/Edge (antiguo) */
+
+  /* --- FIN: Propiedades para hacer el scroll invisible --- */
+}
+
+.event-card {
+  background-color: #607d8b;
+  color: white;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-card h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.event-card p {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* === FILTROS === */
+.event-filters {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 200px;
+}
+
+.event-filters label {
+  font-weight: bold;
+  color: #2a3e42;
+}
+
+.event-filters form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Caja de búsqueda */
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #607d8b;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.search-box input {
+  border: none;
+  padding: 10px;
+  flex-grow: 1;
+  background: none;
+  color: white;
+}
+
+.search-box input[type="text"]::placeholder {
+    color: #EAE4D5; /* Cambia este color si quieres algo más claro u oscuro */
+    opacity: 1;     /* Asegura que no sea semitransparente */
+}
+
+.search-box button {
+  background-color: #3b5c68;
+  border: none;
+  padding: 10px 12px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Selects y fechas */
+.event-filters select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    background-repeat: no-repeat;
+    background-image: url('iconos/Barrita.png'); /* ← reemplaza por tu imagen */
+    background-position: right 12px center;
+    background-size: 18px;
+    cursor: pointer;
+
+
+    color: #EAE4D5;
+    border-radius: 10px;
+}
+
+.event-filters select,
+.event-filters input[type="date"] {
+  padding: 10px;
+  border: none;
+  background-color: #607d8b;
+  color: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  appearance: none;
+}

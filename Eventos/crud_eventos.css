@@ -1,0 +1,172 @@
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&family=Oleo+Script&display=swap');
+
+/* === FONDO === */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Sansation', sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Fondo con imagen desenfocada */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*background-image: url('iconos/Fonfo_Mapa_Color.jpg');/**/
+  background-image: url('iconos/Fonfo_Mapa_Color.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+
+
+
+
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #4a6c82;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+form .cancelar {
+    margin-left: 10px;
+    color: red;
+    text-decoration: none;
+}
+
+.evento {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.evento a {
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === ENCABEZADO === *
+.event-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.event-header h1 {
+    font-family: 'Oleo Script', cursive;
+    font-size: 32px;
+    color: #2a3e42;
+    flex-grow: 1;
+    text-align: center;
+}/**/
+
+.return-button {
+    background: url('iconos/Retorno.png') no-repeat center;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.return-button:hover {
+    transform: scale(1.25);
+}
+/*
+.user-icon img {
+    width: 32px;   
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.crud-btn {
+    background-color: #5a7684;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.crud-btn:hover {
+    background-color: #3b5c68;
+}
+
+.caracas-time {
+    font-size: 15px;
+    color: #444;
+    font-weight: bold;
+    text-align: right;
+    line-height: 1.4;
+}
+/**/
