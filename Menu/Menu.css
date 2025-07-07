@@ -1,0 +1,896 @@
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+
+
+
+
+
+
+
+
+
+
+/* Menú por defecto: vertical (computadora) */
+.menu-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 10px;
+    z-index: 1001;
+    background-color: #637983;
+}
+
+/* Botones del menú *
+.icon-btn {
+    background: none;
+    border: none;
+    margin: 10px 0;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.icon-btn img {
+    width: 28px;
+    height: 28px;
+}/**/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === SIDEBAR === */
+/* Botón hamburguesa (puedes ocultarlo si ya hay barra de íconos) */
+.menu-toggle {
+    display: none;
+}
+
+/* Barra lateral con íconos */
+.icon-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100vh;
+    background-color: #637983;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    z-index: 1003;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    margin: 10px 0;
+    cursor: pointer;
+    padding: 5px;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.icon-btn:hover {
+    background-color: #2a3e42;
+}
+
+.icon-btn img {
+    width: auto;
+    height: 70%;
+    /*filter: invert(1);/**/
+}
+
+/* Panel emergente */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: transparent/*#263C3EA6/**/;
+    color: white;
+    padding: 20px;
+    z-index: 1004;
+    transition: left 0.3s ease;
+}
+
+.sidebar.active {
+    left: 100px; /* aparece justo al lado del menú de íconos */
+}
+
+.sidebar h2 {
+    font-family: 'Oleo Script', cursive;
+    color: white;
+    
+    font-weight: normal;
+    font-size: 38px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+
+    
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.sidebar a:hover {
+    background-color: #2a3e42;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1002;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar .close-btn {
+    padding: 15px 25px;
+    border: none;
+    /*border-radius: 10px;/**/
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: background 0.3s;
+
+    border-radius: 15px 15px 40px 15px;
+    margin: 10px;
+}
+
+.sidebar .close-btn:hover {
+    transform: scale(1.25);
+}
+
+
+
+/*==================/DISEÑO PARA CELULARES 768PX/==================*/
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    /*==================/MENÚ LATERAL/==================*/
+    .menu-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 55px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; /* ← Cambiado para mover extremos */    
+        align-items: center;
+        padding: 0 5px;
+        z-index: 1001;
+
+        border-radius: 0 10px 0 10px;
+    }
+
+    .icon-btn {
+        width: auto;
+        height: 80%;
+    }
+
+    .icon-btn img {
+        width: 32px;
+        height: 32px;
+        /*filter: invert(1);/**/
+    }
+
+    .solo-pc {
+        display: none !important;
+    }
+
+
+
+
+
+    /*==================/MENÚ EMERGENTE OCULTO/==================*/
+    /* Panel emergente */
+    .sidebar {
+        left: -300px;
+        width: 250px;
+        height: 100%;
+        background-color: #637983/*transparent/*#263C3EA6*/;
+        color: white;
+        padding: 20px;
+    }
+
+    .sidebar.active {
+        left: 0px; /* aparece justo al lado del menú de íconos */
+    }
+
+    .sidebar h2 {
+        font-family: 'Oleo Script', cursive;
+        color: white;
+        
+        font-weight: normal;
+        font-size: 26px;
+    }
+
+    .sidebar a {
+        color: white;
+        border-radius: 0px;
+        color: white;        
+        font-weight: normal;
+        font-size: 16px;
+
+        border-bottom: 1px solid #263C3E;
+    }
+
+    .sidebar a:hover {
+        background-color: #2a3e42;
+    }
+
+
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1002;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .sidebar .close-btn {    
+        border-radius: 45px 15px 45px 15px;
+        background-color: #A2B0BE;
+        color: #192E2F;
+    }
+
+    .sidebar .close-btn:hover {
+        transform: scale(1.25);
+        background-color: #192E2F;
+        color: #A2B0BE;
+    }
+}
+
+
+
+
+
+
+
+/*==================/DISEÑO PARA CELULARES 280PX/==================*/
+/* RESPONSIVE */
+@media (max-width: 280px) {
+    /*==================/MENÚ LATERAL/==================*/
+    /*==================/MENÚ LATERAL/==================*/
+    .menu-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 55px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; /* ← Cambiado para mover extremos */    
+        align-items: center;
+        padding: 0 5px;
+        z-index: 1001;
+
+        border-radius: 0 10px 0 10px;
+    }
+
+    .icon-btn {
+        width: auto;
+        height: 80%;
+    }
+
+    .icon-btn img {
+        width: 32px;
+        height: 32px;
+        /*filter: invert(1);/**/
+    }
+
+    .solo-pc {
+        display: none !important;
+    }
+
+
+
+
+
+    /*==================/MENÚ EMERGENTE OCULTO/==================*/
+    /* Panel emergente */
+    .sidebar {
+        left: -300px;
+        width: 150px;
+        height: 100%;
+        background-color: #637983/*transparent/*#263C3EA6*/;
+        color: white;
+        padding: 20px;
+    }
+
+    .sidebar.active {
+        left: 0px; /* aparece justo al lado del menú de íconos */
+    }
+
+    .sidebar h2 {
+        font-family: 'Oleo Script', cursive;
+        color: white;
+        
+        font-weight: normal;
+        font-size: 26px;
+    }
+
+    .sidebar a {
+        color: white;
+        border-radius: 0px;
+        color: white;        
+        font-weight: normal;
+        font-size: 16px;
+
+        border-bottom: 1px solid #263C3E;
+    }
+
+    .sidebar a:hover {
+        background-color: #2a3e42;
+    }
+
+
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1002;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .sidebar .close-btn {    
+        border-radius: 45px 15px 45px 15px;
+        background-color: #A2B0BE;
+        color: #192E2F;
+    }
+
+    .sidebar .close-btn:hover {
+        transform: scale(1.25);
+        background-color: #192E2F;
+        color: #A2B0BE;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos generales */
+body {
+    font-family: 'Sansation', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+/* Estilos generales */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Fonfo_Mapa_Color.png'); /* tu imagen */
+    background-size: cover; /* Mostrar la imagen completa */
+    background-repeat: no-repeat;
+    background-position: top;
+    opacity: 0.7;
+    z-index: -1;
+    
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sansation', sans-serif;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Asegura que el contenido esté por encima del overlay */
+.container, .contenido, form {
+    position: relative;
+    z-index: 1;
+}
+
+/* === ENCABEZADO === */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-cuenta-texto {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.btn-cuenta-texto:hover {
+    transform: scale(1.25);
+}
+
+
+/* CONTENIDO PRINCIPAL */
+.contenido {
+    padding: 20px;
+    max-width: 1000px; /* O el ancho que desees */
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center; /* Centra los elementos hijos horizontalmente */
+    justify-content: center; /* Para centrar verticalmente si se desea */
+    text-align: center;
+}
+
+
+h1 {
+    font-family: 'Rakkas', cursive;
+    /*font-family: 'Oleo Script', cursive;/**/
+    font-weight: normal;
+    font-size: 38px;
+    color: #2a3e42;
+}
+
+.saludo {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #444;
+}
+
+.Versiculo {
+    margin-top: 40px;
+    text-align: center;
+    width: 80%;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 400px;/*
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);/**/
+}
+
+.texto-bienvenida {
+    margin-top: -10px;
+    font-size: 22px;
+    font-family: 'Sansation', cursive;
+    text-align: center;
+}
+
+/* BOTONES DE OPCIONES */
+.opciones {
+    margin-top: 20px;
+    display: grid; /* ← CAMBIA ESTO */
+    grid-template-columns: repeat(3, 1fr); /* ← 3 botones por fila */
+    gap: 40px 50px; /* Espacio entre botones */
+    justify-content: center;
+}
+
+
+.btn-opcion {
+    background-color: #5a7684;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    /*border-radius: 10px;/**/
+    font-size: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: background 0.3s;
+
+    width: 280px;
+    height: 100px;
+    border-radius: 15px 15px 40px 15px;
+    margin: 10px;
+}
+
+.btn-opcion:hover {
+    background-color: #3b5c68;
+}
+
+.logout {
+    background-color: #5a7684;
+}
+
+.logout:hover {
+    background-color: #3b5c68;
+}
+
+.btn-register {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 40px;
+    height: 40px;
+    background-image: url('Registro.png'); /* Asegúrate de que la ruta sea correcta */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    z-index: 1003;
+    background-color: transparent;
+}
+
+
+.btn-register:hover {
+    transform: scale(1.25);
+}
+
+.btn-cuenta-texto {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    z-index: 1003;
+    background-color: transparent;
+}
+
+.btn-cuenta-texto:hover {
+    transform: scale(1.25);
+}
+
+
+
+
+
+
+
+/*==================/DISEÑO PARA CELULARES 768PX/==================*/
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    
+    /*==================/CUERPO/==================*/
+    body {
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        
+        background-image: url('iconos/Fondo_Mapa_Tlf.png'); /* tu imagen */
+        padding-top: 60px; /* para que el menú no tape el contenido */
+    }   
+      
+    .contenido {
+        width: 100%;
+        max-width: 680px; /* se adapta en celulares grandes pero no se expande demasiado */
+        margin: auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .html {
+
+        
+        overflow-y: scroll; /* Permite desplazamiento vertical */
+        scrollbar-width: none;     /* Firefox */
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    }
+
+    .html::-webkit-scrollbar {
+        display: none; /* Chrome, Safari y Opera */
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+
+    /*==================/CITA BIBLICA/==================*/
+    .Versiculo {
+        margin-top: 20px;
+        text-align: center;
+        width: 80%;
+    }
+
+    .texto-bienvenida {
+        font-size: 12px;
+        margin-top: -10px;
+    }
+
+    .texto-cita {
+        font-size: 12px;
+        margin-top: -10px;
+    }
+    
+    .menu-toggle {
+        font-size: 24px;
+    }
+
+    /*==================/BOTONES/==================*/
+    .opciones {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 10px;
+
+
+        
+        
+        align-items: center;
+    }
+
+    .btn-opcion {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        font-size: 16px;
+        margin: 10px auto;
+        display: block;
+
+        
+        border-radius: 10px;
+        width: 280px;
+    }
+    
+    /*==================/IMAGEN TITULAR/==================*/
+    .hero-img {
+        max-width: 200px;
+    }
+
+    /*==================/BOTONES DE REGISTRO/==================*/
+    .btn-register {
+        top: 15px;
+        right: 15px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .btn-register:hover {
+        transform: scale(1.25);
+    }
+
+    /*==================/CUENTA PERSONAL/==================*/
+    .btn-cuenta-texto {
+        top: 15px;
+        right: 15px;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .btn-cuenta-texto:hover {
+        transform: scale(1.25);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*==================/DISEÑO PARA CELULARES 280PX/==================*/
+/* RESPONSIVE */
+@media (max-width: 280px) {
+    
+
+    /*==================/CUERPO/==================*/
+    body {
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        
+        background-image: url('iconos/Fondo_Mapa_Tlf.png'); /* tu imagen */
+        padding-top: 60px; /* para que el menú no tape el contenido */
+    }   
+      
+    .contenido {
+        width: 100%;
+        max-width: 680px; /* se adapta en celulares grandes pero no se expande demasiado */
+        margin: auto;
+        padding: 20px;
+        box-sizing: border-box;
+
+        
+        overflow-y: scroll; /* Permite desplazamiento vertical */
+        scrollbar-width: none;     /* Firefox */
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    }
+
+    .contenido::-webkit-scrollbar {
+        display: none; /* Chrome, Safari y Opera */
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+
+    /*==================/CITA BIBLICA/==================*/
+    .Versiculo {
+        margin-top: 20px;
+        text-align: center;
+        width: 80%;
+    }
+
+    .texto-bienvenida {
+        font-size: 12px;
+        margin-top: -10px;
+    }
+
+    .texto-cita {
+        font-size: 12px;
+        margin-top: -10px;
+    }
+    
+    .menu-toggle {
+        font-size: 24px;
+    }
+
+    /*==================/BOTONES/==================*/
+    .opciones {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 10px;
+
+
+        
+        
+        align-items: center;
+    }
+
+    .btn-opcion {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        font-size: 16px;
+        margin: 10px auto;
+        display: block;
+
+        
+        border-radius: 10px;
+        width: 200px;
+    }
+    
+    /*==================/IMAGEN TITULAR/==================*/
+    .hero-img {
+        max-width: 160px;
+    }
+
+    /*==================/BOTONES DE REGISTRO/==================*/
+    .btn-register {
+        top: 15px;
+        right: 15px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .btn-register:hover {
+        transform: scale(1.25);
+    }
+
+    /*==================/CUENTA PERSONAL/==================*/
+    .btn-cuenta-texto {
+        top: 15px;
+        right: 15px;
+        width: 20px;
+        height: 20px;
+    }
+    
+    .btn-cuenta-texto:hover {
+        transform: scale(1.25);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
