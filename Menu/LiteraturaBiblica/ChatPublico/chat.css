@@ -1,0 +1,832 @@
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&family=Oleo+Script&display=swap');
+
+/* Menú por defecto: vertical (computadora) */
+.menu-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding-top: 0px;
+  z-index: 1001;
+  background-color: #637983;
+}
+
+/* Botones del menú *
+.icon-btn {
+  background: none;
+  border: none;
+  margin: 10px 0;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.icon-btn img {
+  width: 28px;
+  height: 28px;
+}/**/
+
+
+
+/* === SIDEBAR === */
+/* Botón hamburguesa (puedes ocultarlo si ya hay barra de íconos) */
+.menu-toggle {
+  display: none;
+}
+
+/* Barra lateral con íconos */
+.icon-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100vh;
+  background-color: #637983;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5px;
+  z-index: 1003;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  margin: 5px 0;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.icon-btn:hover {
+  background-color: #2a3e42;
+}
+
+.icon-btn img {
+  width: auto;
+  height: 70%;
+  /*filter: invert(1);/**/
+}
+
+/* Panel emergente */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 250px;
+  height: 100%;
+  background-color: transparent/*#263C3EA6/**/;
+  color: #EAE4D5;
+  padding: 20px;
+  z-index: 1004;
+  transition: left 0.3s ease;
+}
+
+.sidebar.active {
+  left: 100px; /* aparece justo al lado del menú de íconos */
+}
+
+.sidebar h2 {
+  font-family: 'Oleo Script', cursive;
+  color: #EAE4D5;
+  
+  font-weight: normal;
+  font-size: 38px;
+}
+
+.sidebar a {
+  color: #EAE4D5;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+
+  
+  font-weight: normal;
+  font-size: 24px;
+}
+
+.sidebar a:hover {
+  background-color: #2a3e42;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1002;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar .close-btn {
+  padding: 15px 25px;
+  border: none;
+  /*border-radius: 10px;/**/
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: background 0.3s;
+
+  border-radius: 15px 15px 40px 15px;
+  margin: 10px;
+}
+
+.sidebar .close-btn:hover {
+  transform: scale(1.25);
+}
+
+
+
+/*==================/DISEÑO PARA CELULARES 768PX/==================*/
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  /*==================/MENÚ LATERAL/==================*/
+  .menu-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 55px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; /* ← Cambiado para mover extremos */    
+      align-items: center;
+      padding: 0 0;
+      z-index: 1001;
+
+      border-radius: 0 0 20px 20px;
+  }
+
+  .icon-btn {
+      width: auto;
+      height: 80%;
+  }
+
+  .icon-btn img {
+      width: 32px;
+      height: 32px;
+      /*filter: invert(1);/**/
+  }
+
+  .solo-pc {
+      display: none !important;
+  }
+
+
+
+
+
+  /*==================/MENÚ EMERGENTE OCULTO/==================*/
+  /* Panel emergente */
+  .sidebar {
+      left: -300px;
+      width: 250px;
+      height: 100%;
+      background-color: #637983/*transparent/*#263C3EA6*/;
+      color: #EAE4D5;
+      padding: 20px;
+  }
+
+  .sidebar.active {
+      left: 0px; /* aparece justo al lado del menú de íconos */
+  }
+
+  .sidebar h2 {
+      font-family: 'Oleo Script', cursive;
+      color: #EAE4D5;
+      
+      font-weight: normal;
+      font-size: 26px;
+  }
+
+  .sidebar a {
+      color: #EAE4D5;
+      border-radius: 0px;
+      color: #EAE4D5;        
+      font-weight: normal;
+      font-size: 16px;
+
+      border-bottom: 1px solid #263C3E;
+  }
+
+  .sidebar a:hover {
+      background-color: #2a3e42;
+  }
+
+
+
+  .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1002;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+  }
+
+  .overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+  }
+
+  .sidebar .close-btn {    
+      border-radius: 45px 15px 45px 15px;
+      background-color: #A2B0BE;
+      color: #192E2F;
+  }
+
+  .sidebar .close-btn:hover {
+      transform: scale(1.25);
+      background-color: #192E2F;
+      color: #A2B0BE;
+  }
+}
+
+
+
+
+
+
+
+/*==================/DISEÑO PARA CELULARES 280PX/==================*/
+/* RESPONSIVE */
+@media (max-width: 280px) {
+  /*==================/MENÚ LATERAL/==================*/
+  /*==================/MENÚ LATERAL/==================*/
+  .menu-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 55px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; /* ← Cambiado para mover extremos */    
+      align-items: center;
+      padding: 0 0;
+      z-index: 1001;
+
+      border-radius: 0 10px 0 10px;
+  }
+
+  .icon-btn {
+      width: auto;
+      height: 80%;
+  }
+
+  .icon-btn img {
+      width: 32px;
+      height: 32px;
+      /*filter: invert(1);/**/
+  }
+
+  .solo-pc {
+      display: none !important;
+  }
+
+
+
+
+
+  /*==================/MENÚ EMERGENTE OCULTO/==================*/
+  /* Panel emergente */
+  .sidebar {
+      left: -300px;
+      width: 150px;
+      height: 100%;
+      background-color: #637983/*transparent/*#263C3EA6*/;
+      color: #EAE4D5;
+      padding: 20px;
+  }
+
+  .sidebar.active {
+      left: 0px; /* aparece justo al lado del menú de íconos */
+  }
+
+  .sidebar h2 {
+      font-family: 'Oleo Script', cursive;
+      color: #EAE4D5;
+      
+      font-weight: normal;
+      font-size: 26px;
+  }
+
+  .sidebar a {
+      color: #EAE4D5;
+      border-radius: 0px;
+      color: #EAE4D5;        
+      font-weight: normal;
+      font-size: 16px;
+
+      border-bottom: 1px solid #263C3E;
+  }
+
+  .sidebar a:hover {
+      background-color: #2a3e42;
+  }
+
+
+
+  .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1002;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+  }
+
+  .overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+  }
+
+  .sidebar .close-btn {    
+      border-radius: 45px 15px 45px 15px;
+      background-color: #A2B0BE;
+      color: #192E2F;
+  }
+
+  .sidebar .close-btn:hover {
+      transform: scale(1.25);
+      background-color: #192E2F;
+      color: #A2B0BE;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Eliminar scroll visible del body y html */
+html, /* Oculta la barra de scroll vertical, pero permite hacer scroll */
+body {
+    overflow-y: scroll; /* asegura que el scroll siga funcionando */
+    scrollbar-width: none; /* para Firefox */
+}
+
+/* Para navegadores WebKit como Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* opcional, por si quieres un fondo invisible */
+}
+
+
+.contenido {
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.contenido::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+
+
+/* === FONDO CON CAPAS === */
+/* === FONDO CON CAPAS === */
+/* Asegura que todo ocupe el alto completo */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Sansation', sans-serif;
+}
+
+/* Fondo de pantalla completo */
+body::before {
+  content: "";
+  position: fixed; /* para que no se repita al hacer scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://directorioasambleasvzla.com/iconos/Fonfo_Mapa_Color.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+/* Asegura que se muestre scroll si el contenido es más largo */
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  background-color: #fff; /* fallback si la imagen no carga */
+}
+
+
+
+
+
+
+/* === CONTENIDO PRINCIPAL === */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* CENTRA horizontalmente */
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.chat-box {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255,255,255,0.95);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin: 0 auto;
+}
+
+/* === ENCABEZADO === */
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.top-header h1 {
+  font-family: 'Oleo Script', cursive;
+  font-weight: normal;
+  font-size: 38px;
+  color: #2a3e42;
+  margin: 0 auto;
+}
+
+.back-btn {
+  background-image: url('https://directorioasambleasvzla.com/iconos/Retorno.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: scale(1.2);
+}
+
+/* === TÍTULO DE LA SALA === */
+.container h2 {
+  font-family: 'Oleo Script', cursive;
+  font-size: 24px;
+  color: #2a3e42;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: normal;
+}
+
+/* === MENSAJES GENERALES (ya existentes) === */
+#chat-scroll {
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  border-radius: 10px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Mensaje base */
+.mensaje {
+  max-width: 70%;
+  padding: 12px 15px;
+  border-radius: 12px;
+  background-color: #d0e1f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  align-self: flex-start;
+  word-break: break-word;
+}
+
+/* Mensaje propio */
+.mensaje.propio {
+  background-color: #b2d8b2;
+  align-self: flex-end;
+}
+
+/* Nombre del usuario */
+.mensaje .nombre {
+  font-weight: bold;
+  color: #2a3e42;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Fecha en la parte inferior derecha */
+.mensaje .fecha {
+  font-size: 0.8em;
+  color: #666;
+  text-align: right;
+  display: block;
+  margin-top: 8px;
+}
+
+/* Ajustes del formulario */
+.formulario-chat {
+  display: flex;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.formulario-chat textarea {
+  flex: 1;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  resize: none;
+  min-height: 60px;
+}
+
+.formulario-chat button {
+  background: #007bff;
+  color: #EAE4D5;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.formulario-chat button:hover {
+  background: #0056b3;
+}
+
+
+/* === FORMULARIO DE MENSAJE === */
+.formulario-chat {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+/*Mensajes de usuarios (cualquiera)*/
+.formulario-chat textarea {
+  flex: 1;
+  resize: none;
+  padding: 14px 18px;
+  font-size: 16px;
+  border: 2px solid #A2B0BE;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+  font-family: 'Sansation', sans-serif;
+  outline: none;
+}
+
+.formulario-chat button {
+  background-color: #637983;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 12px;
+  color: #EAE4D5;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.formulario-chat button:hover {
+  background-color: #4b5f66;
+}
+
+/*MODAL PARA EDITAR MENSAJES*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #EAE4D5;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+}
+.modal textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+.modal button {
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === RESPONSIVE === */
+@media screen and (max-width: 768px) {
+  body {
+      background-image: url('https://directorioasambleasvzla.com/iconos/Fondo_Mapa_Tlf.png'); /* tu imagen */
+  } 
+
+  .container {
+    padding: 10px 0px;
+    align-items: center;
+  }
+
+  .chat-box {
+    width: 90%;
+    max-width: 600px;
+    padding: 0px;
+    margin: 0 auto;
+  }
+
+  .top-header {
+    margin-bottom: 0px;
+  }
+
+  .top-header h1 {
+    font-size: 26px;
+  }
+
+  .container h2 {
+    margin-bottom: 00px;
+  }
+
+  .top-header .back-btn {
+    display: none !important;
+  }
+
+  .formulario-chat {
+    flex-direction: column;
+  }
+
+  .formulario-chat textarea,
+  .formulario-chat button {
+    width: 100%;
+  }
+
+  .mensaje-container {
+    width: 90%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 300px) {
+  .container {
+    padding: 15px 10px;
+    align-items: center;
+  }
+
+  .chat-box {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.95);
+  }
+
+  .top-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .top-header h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .mensaje-container {
+    gap: 12px;
+  }
+
+  #chat-scroll {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .mensaje,
+  .mensaje.propio {
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .mensaje .nombre,
+  .mensaje.propio .nombre {
+    font-weight: bold;
+    display: block;
+  }
+
+  .formulario-chat {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .formulario-chat textarea {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  .formulario-chat button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .editar-link {
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 4px;
+  }
+}

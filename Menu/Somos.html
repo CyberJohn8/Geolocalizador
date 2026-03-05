@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" type="image/x-icon" href="https://directorioasambleasvzla.com/iconos/icon2-8.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asambleas Congregadas al Nombre del Señor</title>
+
+    <!-- Fuente Sansation -->
+    <link href="https://fonts.cdnfonts.com/css/sansation" rel="stylesheet">
+
+    <style>
+        /* === FUENTES === */
+        @import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+        /* === FUENTES === */
+        @import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&family=Oleo+Script&display=swap');
+
+
+        /* Estilos generales */
+        body {
+            font-family: 'Sansation', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+            color: #192E2F;
+            z-index: 1;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://directorioasambleasvzla.com/iconos/Fonfo_Mapa_Color.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+            opacity: 0.7;
+            z-index: -1;
+        }
+
+        .contenido {
+            width: 100%;
+            max-width: 900px;
+            margin: 20px;
+            padding: 30px 20px;
+            box-sizing: border-box;
+            z-index: 1;
+            position: relative;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-width: 400px;/*
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);/**/
+        }
+
+        .contenido h1 {
+            margin-top: 0;
+            color: #2a3e42;
+            text-align: center;
+            margin-bottom: 30px;
+            
+            font-family: 'Oleo Script', cursive;
+            /**
+            font-weight: normal;/**/
+        }
+
+        /* Estilos para la cartelera/acordeón */
+        .cartelera {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .seccion {
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: #EAE4D5;
+        }
+
+        .seccion-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .seccion-header:hover {
+            background-color: #EAE4D5;
+            border-bottom: 2px solid #192E2F;
+        }
+
+        .seccion-header h2 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #2a3e42;
+            font-weight: normal;
+            text-align: left;
+            /**
+            font-family: 'Oleo Script', cursive;/**/
+            font-weight: normal;
+        }
+
+        .seccion-header .indicador {
+            font-size: 1.5em;
+            color: #2a3e42;
+            transition: transform 0.3s ease;
+        }
+
+        .seccion-contenido {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            padding: 0 20px;
+            background-color: #EAE4D5;
+        }
+
+        .seccion-contenido p {
+            margin: 0;
+            padding: 20px 0;
+            line-height: 1.6;
+            color: #2a3e42;
+            text-align: left;
+            
+            font-family: 'Sansation', sans-serif;
+        }
+
+        .seccion.activa .seccion-contenido {
+            max-height: 500px;
+        }
+
+        .seccion.activa .seccion-header .indicador {
+            transform: rotate(-90deg);
+        }
+
+        /* Botón de retorno */
+        .return-button {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            width: 30px;
+            height: 30px;
+            background-image: url('https://directorioasambleasvzla.com/iconos/Retorno.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            z-index: 1003;
+            background-color: transparent;
+        }
+
+        /* Footer con enlaces */
+        footer {
+            margin-top: 2em;
+            padding: 20px 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .enlaces-rapidos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .enlaces-rapidos li {
+            list-style: none;
+        }
+
+        .enlaces-rapidos a {
+            color: #2a3e42;
+            text-decoration: none;
+            padding: 8px 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+            border: 1px solid rgba(25, 46, 47, 0.2);
+            
+            font-family: 'Sansation', sans-serif;
+        }
+
+        .enlaces-rapidos a:hover {
+            background-color: #192E2F;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                background-image: url('/iconos/Fondo_Mapa_Tlf.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                flex-direction: column;
+                padding: 0;
+                min-height: 100vh;
+                overflow-y: auto;
+            }
+
+            .contenido {
+                width: 95%;
+                max-width: 100%;
+                margin: 20px 0;
+                padding: 15px;
+                font-size: 14px;
+            }
+
+            /*==================/IMAGEN TITULAR/==================*/
+            .hero-img {
+                max-width: 200px;
+            }
+
+            .seccion-header {
+                padding: 15px;
+            }
+
+            .seccion-header h2 {
+                font-size: 1.1em;
+            }
+
+            .seccion-contenido p {
+                padding: 15px 0;
+                font-size: 14px;
+            }
+
+            .return-button {
+                top: 10px;
+                left: 10px;
+                width: 24px;
+                height: 24px;
+            }
+
+            .enlaces-rapidos {
+                gap: 8px;
+            }
+
+            .enlaces-rapidos a {
+                padding: 6px 12px;
+                font-size: 0.85em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .enlaces-rapidos {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .enlaces-rapidos a {
+                width: 90%;
+                text-align: center;
+            }
+
+        }
+
+        @media (max-width: 280px) {
+            /*==================/IMAGEN TITULAR/==================*/
+            .hero-img {
+                max-width: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón de retorno -->
+    <button onclick="location.href='index.php'" class="return-button" title="Volver"></button>
+    
+    <div class="contenido">
+        <!--<img src="/iconos/Titulo.png" alt="Bienvenida" class="hero-img">-->
+        <h1>Asambleas Congregadas al Nombre del Señor</h1>
+
+        <div class="cartelera">
+            <!-- Sección 1 -->
+            <div class="seccion" id="seccion-somos">
+                <div class="seccion-header" onclick="toggleSeccion('somos')">
+                    <h2>¿Quiénes Somos?</h2>
+                    <div class="indicador"><</div>
+                </div>
+                <div class="seccion-contenido" id="contenido-somos">
+                    <p>
+                        Somos cristianos, que nos congregamos sencillamente en 
+                        el nombre del Señor Jesucristo, como Él lo señaló en 
+                        Mateo 18:20 <strong>"Porque donde están dos o tres 
+                        congregados en mi nombre, allí estoy yo en medio de ellos"</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sección 2 -->
+            <div class="seccion" id="seccion-denominados">
+                <div class="seccion-header" onclick="toggleSeccion('denominados')">
+                    <h2>¿Cómo nos denominamos?</h2>
+                    <div class="indicador"><</div>
+                </div>
+                <div class="seccion-contenido" id="contenido-denominados">
+                    <p>
+                        No pertenecemos a <strong>ninguna organización religiosa</strong> (ni política) 
+                        Juan 15:19 <strong>"Si fuerais del mundo, el mundo amaría lo suyo; pero 
+                        porque no sois del mundo, antes yo os elegí del mundo, por eso el mundo os 
+                        aborrece"</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sección 3 -->
+            <div class="seccion" id="seccion-lider">
+                <div class="seccion-header" onclick="toggleSeccion('lider')">
+                    <h2>¿Quién nos lidera?</h2>
+                    <div class="indicador"><</div>
+                </div>
+                <div class="seccion-contenido" id="contenido-lider">
+                    <p>
+                        No nos preside un líder religioso aquí en la tierra 
+                        (llámese papa, pastor, reverendo, etc.), sino el mismo 
+                        Señor Jesucristo a través de su Santa Palabra (<strong>La Biblia</strong>). 
+                        Colosenses 1:18 <strong>"y él es la cabeza del cuerpo 
+                        que es la iglesia, él que es el principio, el primogénito de 
+                        entre los muertos, para que en todo tenga la preeminencia"</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sección 4 -->
+            <div class="seccion" id="seccion-congregacion">
+                <div class="seccion-header" onclick="toggleSeccion('congregacion')">
+                    <h2>¿Cómo nos congregamos?</h2>
+                    <div class="indicador"><</div>
+                </div>
+                <div class="seccion-contenido" id="contenido-congregacion">
+                    <p>
+                        Predicamos el evangelio <strong>"decentemente y con orden"</strong> 
+                        1 Corintios 14:40 <strong>"pero hágase todo decentemente y con orden"</strong>, 
+                        sin alboroto y sin nada que esté reñido con el 
+                        comportamiento civilizado de la conducta humana.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sección 5 -->
+            <div class="seccion" id="seccion-donaciones">
+                <div class="seccion-header" onclick="toggleSeccion('donaciones')">
+                    <h2>¿Donaciones?</h2>
+                    <div class="indicador"><</div>
+                </div>
+                <div class="seccion-contenido" id="contenido-donaciones">
+                    <p>
+                        <strong>No pedimos dinero</strong> a nuestros oyentes 
+                        (ni practicamos el diezmo), porque Dios no está buscando 
+                        tu dinero, sino tu corazón, para darte salvación. En Lucas 
+                        19:46 Jesús dijo: <strong>"Escrito está: Mi casa es casa 
+                        de oración; mas vosotros la habéis hecho cueva de ladrones".</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sección 6 -->
+            <div class="seccion" id="seccion-hacemos">
+                <div class="seccion-header" onclick="toggleSeccion('hacemos')">
+                    <h2>¿Qué hacemos?</h2>
+                    <div class="indicador"><</div>
+                </div>
+                <div class="seccion-contenido" id="contenido-hacemos">
+                    <p>
+                        Predicamos el mensaje de Dios, que todos los seres humanos pecaron, 
+                        <strong>incluso usted</strong>, y que a causa del pecado estamos separados 
+                        de Dios, pero que Él nos amó en su hijo Jesucristo, quien murió en nuestro 
+                        lugar para salvarnos. Romanos 3:23-24 <strong>"por cuanto todos pecaron, 
+                        y están destituidos de la gloria de Dios, siendo justificados gratuitamente 
+                        por su gracia, mediante la redención que es en Cristo Jesús,"</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sección 7 -->
+            <div class="seccion" id="seccion-porque">
+                <div class="seccion-header" onclick="toggleSeccion('porque')">
+                    <h2>¿Por qué lo hacemos?</h2>
+                    <div class="indicador"><</div>
+                </div>
+                <div class="seccion-contenido" id="contenido-porque">
+                    <p>
+                        Predicamos que todo aquel que se arrepiente de sus pecados y acepta a Cristo 
+                        como su <strong>Salvador personal</strong> es salvo del infierno y tiene vida 
+                        eterna en los cielos. 1 Pedro 1:3-4 <strong>"Bendito el Dios y Padre de nuestro Señor 
+                        Jesucristo, que según su grande misericordia nos hizo renacer para una 
+                        esperanza viva, por la resurrección de Jesucristo de los muertos para una 
+                        herencia incorruptible, incontaminada e inmarcesible, reservada en los cielos 
+                        para vosotros,"</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sección 8 -->
+            <div class="seccion" id="seccion-donde">
+                <div class="seccion-header" onclick="toggleSeccion('donde')">
+                    <h2>¿Dónde encontrarnos?</h2>
+                    <div class="indicador"><</div>
+                </div>
+                <div class="seccion-contenido" id="contenido-donde">
+                    <p>
+                        Para más información puede emplear esta APP para: <br>
+
+                        <br>Localizar el Local Evangelico más cercano a su localidad
+                        empleando la función <strong>"Ubicaciones"</strong>
+                        <br>Consultar la Biblia con las funciones de <strong>"Estudio Biblico"</strong>
+                        <br>Revisar el material en la sección de <strong>"Material Literario"</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--<footer>
+            <ul class="enlaces-rapidos">
+                <li><a href="javascript:void(0)" onclick="toggleSeccion('somos')">1 - ¿Quiénes Somos?</a></li>
+                <li><a href="javascript:void(0)" onclick="toggleSeccion('denominados')">2 - ¿Cómo nos denominamos?</a></li>
+                <li><a href="javascript:void(0)" onclick="toggleSeccion('lider')">3 - ¿Quién nos lidera?</a></li>
+                <li><a href="javascript:void(0)" onclick="toggleSeccion('congregacion')">4 - ¿Cómo nos congregamos?</a></li>
+                <li><a href="javascript:void(0)" onclick="toggleSeccion('donaciones')">5 - ¿Donaciones?</a></li>
+                <li><a href="javascript:void(0)" onclick="toggleSeccion('hacemos')">6 - ¿Qué hacemos?</a></li>
+                <li><a href="javascript:void(0)" onclick="toggleSeccion('porque')">7 - ¿Por qué lo hacemos?</a></li>
+                <li><a href="javascript:void(0)" onclick="toggleSeccion('donde')">8 - ¿Dónde encontrarnos?</a></li>
+            </ul>
+        </footer>-->
+    </div>
+
+    <script>
+        // Función para mostrar/ocultar secciones
+        function toggleSeccion(id) {
+            const seccion = document.getElementById(`seccion-${id}`);
+            const contenido = document.getElementById(`contenido-${id}`);
+            
+            // Si ya está activa, la cerramos
+            if (seccion.classList.contains('activa')) {
+                seccion.classList.remove('activa');
+                contenido.style.maxHeight = null;
+            } else {
+                // Cerramos todas las secciones primero (opcional)
+                // Si quieres que solo una esté abierta a la vez, descomenta esto:
+                /*
+                document.querySelectorAll('.seccion').forEach(s => {
+                    s.classList.remove('activa');
+                    s.querySelector('.seccion-contenido').style.maxHeight = null;
+                });
+                */
+                
+                // Abrimos la sección seleccionada
+                seccion.classList.add('activa');
+                contenido.style.maxHeight = contenido.scrollHeight < "px";
+            }
+        }
+
+        // Función para abrir una sección específica desde los enlaces
+        function abrirSeccion(id) {
+            // Cerramos todas las secciones primero
+            document.querySelectorAll('.seccion').forEach(s => {
+                s.classList.remove('activa');
+                s.querySelector('.seccion-contenido').style.maxHeight = null;
+            });
+            
+            // Abrimos la sección solicitada
+            const seccion = document.getElementById(`seccion-${id}`);
+            const contenido = document.getElementById(`contenido-${id}`);
+            
+            if (seccion && contenido) {
+                seccion.classList.add('activa');
+                contenido.style.maxHeight = contenido.scrollHeight < "px";
+                
+                // Desplazar suavemente a la sección
+                seccion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Si quieres que al cargar la página una sección esté abierta por defecto
+        // descomenta la siguiente línea:
+        // document.addEventListener('DOMContentLoaded', () => toggleSeccion('somos'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,849 @@
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&family=Oleo+Script&display=swap');
+
+/* Menú por defecto: vertical (computadora) */
+.menu-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding-top: 0px;
+  z-index: 1001;
+  background-color: #637983;
+}
+
+/* Botones del menú *
+.icon-btn {
+  background: none;
+  border: none;
+  margin: 10px 0;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.icon-btn img {
+  width: 28px;
+  height: 28px;
+}/**/
+
+
+
+/* === SIDEBAR === */
+/* Botón hamburguesa (puedes ocultarlo si ya hay barra de íconos) */
+.menu-toggle {
+  display: none;
+}
+
+/* Barra lateral con íconos */
+.icon-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100vh;
+  background-color: #637983;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5px;
+  z-index: 1003;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  margin: 5px 0;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.icon-btn:hover {
+  background-color: #2a3e42;
+}
+
+.icon-btn img {
+  width: auto;
+  height: 70%;
+  /*filter: invert(1);/**/
+}
+
+/* Panel emergente */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 250px;
+  height: 100%;
+  background-color: transparent/*#263C3EA6/**/;
+  color: #EAE4D5;
+  padding: 20px;
+  z-index: 1004;
+  transition: left 0.3s ease;
+}
+
+.sidebar.active {
+  left: 100px; /* aparece justo al lado del menú de íconos */
+}
+
+.sidebar h2 {
+  font-family: 'Oleo Script', cursive;
+  color: #EAE4D5;
+  
+  font-weight: normal;
+  font-size: 38px;
+}
+
+.sidebar a {
+  color: #EAE4D5;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+
+  
+  font-weight: normal;
+  font-size: 24px;
+}
+
+.sidebar a:hover {
+  background-color: #2a3e42;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1002;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar .close-btn {
+  padding: 15px 25px;
+  border: none;
+  /*border-radius: 10px;/**/
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: background 0.3s;
+
+  border-radius: 15px 15px 40px 15px;
+  margin: 10px;
+}
+
+.sidebar .close-btn:hover {
+  transform: scale(1.25);
+}
+
+
+
+/*==================/DISEÑO PARA CELULARES 768PX/==================*/
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  /*==================/MENÚ LATERAL/==================*/
+  .menu-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 55px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; /* ← Cambiado para mover extremos */    
+      align-items: center;
+      padding: 0 0;
+      z-index: 1001;
+
+      border-radius: 0 0 20px 20px;
+  }
+
+  .icon-btn {
+      width: auto;
+      height: 80%;
+  }
+
+  .icon-btn img {
+      width: 32px;
+      height: 32px;
+      /*filter: invert(1);/**/
+  }
+
+  .solo-pc {
+      display: none !important;
+  }
+
+
+
+
+
+  /*==================/MENÚ EMERGENTE OCULTO/==================*/
+  /* Panel emergente */
+  .sidebar {
+      left: -300px;
+      width: 250px;
+      height: 100%;
+      background-color: #637983/*transparent/*#263C3EA6*/;
+      color: #EAE4D5;
+      padding: 20px;
+  }
+
+  .sidebar.active {
+      left: 0px; /* aparece justo al lado del menú de íconos */
+  }
+
+  .sidebar h2 {
+      font-family: 'Oleo Script', cursive;
+      color: #EAE4D5;
+      
+      font-weight: normal;
+      font-size: 26px;
+  }
+
+  .sidebar a {
+      color: #EAE4D5;
+      border-radius: 0px;
+      color: #EAE4D5;        
+      font-weight: normal;
+      font-size: 16px;
+
+      border-bottom: 1px solid #263C3E;
+  }
+
+  .sidebar a:hover {
+      background-color: #2a3e42;
+  }
+
+
+
+  .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1002;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+  }
+
+  .overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+  }
+
+  .sidebar .close-btn {    
+      border-radius: 45px 15px 45px 15px;
+      background-color: #A2B0BE;
+      color: #192E2F;
+  }
+
+  .sidebar .close-btn:hover {
+      transform: scale(1.25);
+      background-color: #192E2F;
+      color: #A2B0BE;
+  }
+}
+
+
+
+
+
+
+
+/*==================/DISEÑO PARA CELULARES 280PX/==================*/
+/* RESPONSIVE */
+@media (max-width: 280px) {
+  /*==================/MENÚ LATERAL/==================*/
+  /*==================/MENÚ LATERAL/==================*/
+  .menu-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 55px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; /* ← Cambiado para mover extremos */    
+      align-items: center;
+      padding: 0 0;
+      z-index: 1001;
+
+      border-radius: 0 10px 0 10px;
+  }
+
+  .icon-btn {
+      width: auto;
+      height: 80%;
+  }
+
+  .icon-btn img {
+      width: 32px;
+      height: 32px;
+      /*filter: invert(1);/**/
+  }
+
+  .solo-pc {
+      display: none !important;
+  }
+
+
+
+
+
+  /*==================/MENÚ EMERGENTE OCULTO/==================*/
+  /* Panel emergente */
+  .sidebar {
+      left: -300px;
+      width: 150px;
+      height: 100%;
+      background-color: #637983/*transparent/*#263C3EA6*/;
+      color: #EAE4D5;
+      padding: 20px;
+  }
+
+  .sidebar.active {
+      left: 0px; /* aparece justo al lado del menú de íconos */
+  }
+
+  .sidebar h2 {
+      font-family: 'Oleo Script', cursive;
+      color: #EAE4D5;
+      
+      font-weight: normal;
+      font-size: 26px;
+  }
+
+  .sidebar a {
+      color: #EAE4D5;
+      border-radius: 0px;
+      color: #EAE4D5;        
+      font-weight: normal;
+      font-size: 16px;
+
+      border-bottom: 1px solid #263C3E;
+  }
+
+  .sidebar a:hover {
+      background-color: #2a3e42;
+  }
+
+
+
+  .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1002;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+  }
+
+  .overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+  }
+
+  .sidebar .close-btn {    
+      border-radius: 45px 15px 45px 15px;
+      background-color: #A2B0BE;
+      color: #192E2F;
+  }
+
+  .sidebar .close-btn:hover {
+      transform: scale(1.25);
+      background-color: #192E2F;
+      color: #A2B0BE;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Eliminar scroll visible del body y html */
+html, /* Oculta la barra de scroll vertical, pero permite hacer scroll */
+body {
+    overflow-y: scroll; /* asegura que el scroll siga funcionando */
+    scrollbar-width: none; /* para Firefox */
+}
+
+/* Para navegadores WebKit como Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* opcional, por si quieres un fondo invisible */
+}
+
+
+.contenido {
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.contenido::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+
+
+
+/* === FONDO CON CAPAS === */
+/* === FONDO CON CAPAS === */
+/* Asegura que todo ocupe el alto completo */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Sansation', sans-serif;
+}
+
+/* Fondo de pantalla completo */
+body::before {
+  content: "";
+  position: fixed; /* para que no se repita al hacer scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://directorioasambleasvzla.com/iconos/Fonfo_Mapa_Color.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+/* Asegura que se muestre scroll si el contenido es más largo */
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  background-color: #fff; /* fallback si la imagen no carga */
+}
+
+
+
+html, body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* === CONTENEDOR GENERAL === */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* CENTRA horizontalmente */
+  justify-content: center;
+  width: 100%;
+}
+
+  
+  /* === ENCABEZADO SUPERIOR === */
+  .top-header {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+    margin: 10px auto; /* Centra horizontalmente el layout */
+  }
+  
+  .top-header h1 {
+    font-family: 'Oleo Script', cursive;
+    font-weight: normal;
+    font-size: 38px;
+    color: #2a3e42;
+    margin: 0;
+    text-align: center;
+    flex-grow: 1;
+  }
+  
+  .back-btn {
+    background-image: url('https://directorioasambleasvzla.com/iconos/Retorno.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .back-btn:hover {
+    transform: scale(1.2);
+  }
+  
+  /* === DISEÑO FLEX DE SALAS Y FORMULARIO === */
+  .salas-layout {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Centra horizontalmente los hijos */
+      align-items: flex-start;
+      gap: 40px;
+      max-width: 90%; /* Aumenté ligeramente para mejor uso del espacio */
+      margin: 0 auto; /* Centra el layout en la página */
+      padding: 20px;
+  }
+
+  .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centra todo el contenido */
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+  }
+
+  /* === BLOQUE DE SALAS CON SCROLL === */
+  .salas-scroll {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      max-height: 450px;
+      overflow-y: auto;
+      text-align: center;
+  }
+
+  /* === FORMULARIO DE CREAR SALA === */
+  .crear-sala-form {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+  }
+  
+  .salas-scroll h3 {
+    font-family: 'Oleo Script', cursive;
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #2a3e42;
+    font-weight: normal;
+  }
+  
+  .sala-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .sala-btn {
+    background-color: #637983;
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    flex-grow: 1;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .sala-btn:hover {
+    background-color: #4b5f66;
+  }
+  
+  .delete-btn {
+    margin-left: 10px;
+    background-color: #B87856;
+    color: #EAE4D5;
+    border-radius: 6px;
+    padding: 6px 10px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .delete-btn:hover {
+    background-color: #E6CDB7;
+    color: #192E2F;
+  }
+  
+  /* === FORMULARIO CREAR SALA === */
+  .crear-sala-form {
+    background: rgba(255,255,255,0.95);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .crear-sala-form h3 {
+    font-family: 'Oleo Script', cursive;
+    font-size: 24px;
+    color: #2a3e42;
+    margin-bottom: 20px;
+  }
+  
+  .crear-sala-form label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+    color: #2a3e42;
+  }
+  
+  .crear-sala-form input[type="text"],
+  .crear-sala-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px dashed #a2b0be;
+    margin-bottom: 15px;
+    background: #fff;
+    box-sizing: border-box;
+  }
+  
+  .crear-sala-form textarea {
+    resize: vertical;
+    height: 80px;
+  }
+  
+  .crear-sala-form button {
+    background-color: #637983;
+    color: #EAE4D5;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .crear-sala-form button:hover {
+    background-color: #4b5f66;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+/* === FORMATO RESPONSIVO PARA CELULARES === */
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url('https://directorioasambleasvzla.com/iconos/Fondo_Mapa_Tlf.png'); /* tu imagen */
+  } 
+
+  html, body {
+    font-size: 14px;
+    padding: 0;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centrado horizontal */
+    justify-content: center;
+
+    /**/
+    margin-left: -4%;/**/
+    padding: 30px 0px;
+  }
+  
+  .top-header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+
+    
+    margin-bottom: 0px;
+    margin: 10px auto; /* Centra horizontalmente el layout */
+  }
+
+  .top-header h1 {
+    font-size: 26px;
+    text-align: center;
+    
+    margin-top: 10px;
+  }
+
+  .top-header .back-btn {
+    display: none !important;
+  }
+
+  .salas-layout {
+    flex-direction: column;
+    gap: 20px;
+    max-width: 90%;
+    margin: 0 auto;  /* CENTRAR */
+    align-items: center;
+  }
+  
+  .salas-scroll h3 {
+    margin-bottom: 10px;
+  }
+
+  .salas-scroll,
+  .crear-sala-form {
+    max-width: 100%;
+    padding: 20px;
+    box-shadow: none;
+    border-radius: 12px;
+  }
+
+  .sala-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sala-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .delete-btn {
+    margin-left: 0;
+    margin-top: 2px;
+    padding: 6px;
+    font-size: 13px;
+  }
+
+  .crear-sala-form h3 {
+    font-size: 20px;
+  }
+
+  .crear-sala-form input[type="text"],
+  .crear-sala-form textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .crear-sala-form button {
+    padding: 10px;
+    font-size: 15px;
+  }
+}
+
+
+
+
+@media screen and (max-width: 300px) {
+  .top-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .top-header h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centrado horizontal */
+    justify-content: center;
+
+    /**
+    margin-left: -40px;/**/
+  }
+
+  .salas-layout {
+    flex-direction: column;
+    gap: 15px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 5px;
+    align-items: center;
+  }
+
+  .salas-scroll,
+  .crear-sala-form {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .salas-scroll h3,
+  .crear-sala-form h3 {
+    font-size: 18px;
+  }
+
+  .sala-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .delete-btn {
+    font-size: 12px;
+    margin-top: 6px;
+    padding: 5px 8px;
+  }
+
+  .crear-sala-form input,
+  .crear-sala-form textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .crear-sala-form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

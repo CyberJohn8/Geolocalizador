@@ -1,0 +1,873 @@
+/* Menú por defecto: vertical (computadora) */
+.menu-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding-top: 0px;
+  z-index: 1001;
+  background-color: #637983;
+}
+
+/* Botones del menú *
+.icon-btn {
+  background: none;
+  border: none;
+  margin: 10px 0;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.icon-btn img {
+  width: 28px;
+  height: 28px;
+}/**/
+
+
+
+/* === SIDEBAR === */
+/* Botón hamburguesa (puedes ocultarlo si ya hay barra de íconos) */
+.menu-toggle {
+  display: none;
+}
+
+/* Barra lateral con íconos */
+.icon-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100vh;
+  background-color: #637983;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5px;
+  z-index: 1003;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  margin: 5px 0;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.icon-btn:hover {
+  background-color: #2a3e42;
+}
+
+.icon-btn img {
+  width: auto;
+  height: 70%;
+  /*filter: invert(1);/**/
+}
+
+/* Panel emergente */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 250px;
+  height: 100%;
+  background-color: transparent/*#263C3EA6/**/;
+  color: #EAE4D5;
+  padding: 20px;
+  z-index: 1004;
+  transition: left 0.3s ease;
+}
+
+.sidebar.active {
+  left: 100px; /* aparece justo al lado del menú de íconos */
+}
+
+.sidebar h2 {
+  font-family: 'Oleo Script', cursive;
+  color: #EAE4D5;
+  
+  font-weight: normal;
+  font-size: 38px;
+}
+
+.sidebar a {
+  color: #EAE4D5;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+
+  
+  font-weight: normal;
+  font-size: 24px;
+}
+
+.sidebar a:hover {
+  background-color: #2a3e42;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1002;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar .close-btn {
+  padding: 15px 25px;
+  border: none;
+  /*border-radius: 10px;/**/
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: background 0.3s;
+
+  border-radius: 15px 15px 40px 15px;
+  margin: 10px;
+}
+
+.sidebar .close-btn:hover {
+  transform: scale(1.25);
+}
+
+
+
+/*==================/DISEÑO PARA CELULARES 768PX/==================*/
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  /*==================/MENÚ LATERAL/==================*/
+  .menu-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 55px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; /* ← Cambiado para mover extremos */    
+      align-items: center;
+      padding: 0 0;
+      z-index: 1001;
+
+      border-radius: 0 0 20px 20px;
+  }
+
+  .icon-btn {
+      width: auto;
+      height: 80%;
+  }
+
+  .icon-btn img {
+      width: 32px;
+      height: 32px;
+      /*filter: invert(1);/**/
+  }
+
+  .solo-pc {
+      display: none !important;
+  }
+
+
+
+
+
+  /*==================/MENÚ EMERGENTE OCULTO/==================*/
+  /* Panel emergente */
+  .sidebar {
+      left: -300px;
+      width: 250px;
+      height: 100%;
+      background-color: #637983/*transparent/*#263C3EA6*/;
+      color: #EAE4D5;
+      padding: 20px;
+  }
+
+  .sidebar.active {
+      left: 0px; /* aparece justo al lado del menú de íconos */
+  }
+
+  .sidebar h2 {
+      font-family: 'Oleo Script', cursive;
+      color: #EAE4D5;
+      
+      font-weight: normal;
+      font-size: 26px;
+  }
+
+  .sidebar a {
+      color: #EAE4D5;
+      border-radius: 0px;
+      color: #EAE4D5;        
+      font-weight: normal;
+      font-size: 16px;
+
+      border-bottom: 1px solid #263C3E;
+  }
+
+  .sidebar a:hover {
+      background-color: #2a3e42;
+  }
+
+
+
+  .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1002;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+  }
+
+  .overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+  }
+
+  .sidebar .close-btn {    
+      border-radius: 45px 15px 45px 15px;
+      background-color: #A2B0BE;
+      color: #192E2F;
+  }
+
+  .sidebar .close-btn:hover {
+      transform: scale(1.25);
+      background-color: #192E2F;
+      color: #A2B0BE;
+  }
+}
+
+
+
+
+
+
+
+/*==================/DISEÑO PARA CELULARES 280PX/==================*/
+/* RESPONSIVE */
+@media (max-width: 280px) {
+  /*==================/MENÚ LATERAL/==================*/
+  /*==================/MENÚ LATERAL/==================*/
+  .menu-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 55px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; /* ← Cambiado para mover extremos */    
+      align-items: center;
+      padding: 0 0;
+      z-index: 1001;
+
+      border-radius: 0 10px 0 10px;
+  }
+
+  .icon-btn {
+      width: auto;
+      height: 80%;
+  }
+
+  .icon-btn img {
+      width: 32px;
+      height: 32px;
+      /*filter: invert(1);/**/
+  }
+
+  .solo-pc {
+      display: none !important;
+  }
+
+
+
+
+
+  /*==================/MENÚ EMERGENTE OCULTO/==================*/
+  /* Panel emergente */
+  .sidebar {
+      left: -300px;
+      width: 150px;
+      height: 100%;
+      background-color: #637983/*transparent/*#263C3EA6*/;
+      color: #EAE4D5;
+      padding: 20px;
+  }
+
+  .sidebar.active {
+      left: 0px; /* aparece justo al lado del menú de íconos */
+  }
+
+  .sidebar h2 {
+      font-family: 'Oleo Script', cursive;
+      color: #EAE4D5;
+      
+      font-weight: normal;
+      font-size: 26px;
+  }
+
+  .sidebar a {
+      color: #EAE4D5;
+      border-radius: 0px;
+      color: #EAE4D5;        
+      font-weight: normal;
+      font-size: 16px;
+
+      border-bottom: 1px solid #263C3E;
+  }
+
+  .sidebar a:hover {
+      background-color: #2a3e42;
+  }
+
+
+
+  .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1002;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+  }
+
+  .overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+  }
+
+  .sidebar .close-btn {    
+      border-radius: 45px 15px 45px 15px;
+      background-color: #A2B0BE;
+      color: #192E2F;
+  }
+
+  .sidebar .close-btn:hover {
+      transform: scale(1.25);
+      background-color: #192E2F;
+      color: #A2B0BE;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&family=Oleo+Script&display=swap');
+
+/* === FUENTES (igual que en Biblia) === */
+@import url('https://fonts.googleapis.com/css2?family=Sansation&family=Oleo+Script&display=swap');
+
+*{
+  font-family: 'Sansation', cursive;
+}
+
+/* === ESTILO GENERAL === */
+body {
+  font-family: 'Sansation', cursive;
+  margin: 0;
+  padding: 0;
+  color: #192E2F;
+  background-image: url('https://directorioasambleasvzla.com/iconos/Fonfo_Mapa_Color.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+/* === ENCABEZADO DEL HIMNARIO === */
+/* === ENCABEZADO === */
+/* === ENCABEZADO === */
+header {
+  position: relative;   /* clave para posicionar el botón */
+  text-align: center;   /* centra el título */
+  padding: 10px 20px;
+}
+
+header h1 {
+  font-family: 'Sansation', sans-serif;
+  font-size: 38px;
+  margin: 0;
+  color: #192E2F;
+}
+
+/* Botón de retorno fijo a la izquierda */
+header .btn-retorno {
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  transform: translateY(-50%); /* lo centra verticalmente */
+  background-image: url('https://directorioasambleasvzla.com/iconos/Retorno.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+header .btn-retorno:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+
+/* Responsive: ocultar el botón en pantallas pequeñas si quieres */
+@media (max-width: 600px) {
+  body {
+    background-image: url('https://directorioasambleasvzla.com/iconos/Fondo_Mapa_Tlf.png');
+  }
+  
+  
+  header .btn-retorno {
+    display: none;
+  }
+
+  header h1 {
+    font-size: 26px;
+    margin-top: 15%;
+  }
+}
+
+
+/* === ENCABEZADO === */
+h1 {
+  font-family: 'Sansation', sans-serif;
+  font-size: 42px;
+  text-align: center;
+  color: #192E2F;
+  margin: 20px 0;
+}
+
+/* === CONTENEDOR GENERAL === */
+.himnario-container {
+  max-width: 800px;
+  margin: 30px auto;
+  background: transparent;
+  border-radius: 15px;
+  /*/box-shadow: 0 4px 12px rgba(0,0,0,0.15);/**/
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  .himnario-container {
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+}
+}
+
+/* === BUSCADOR === */
+.buscador-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 500px;
+}
+
+#buscador {
+  width: 100%;
+  padding: 12px 45px 12px 15px;
+  font-size: 16px;
+  border-radius: 20px 10px 10px 10px;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #637983;
+  color: white; /* Texto en color blanco */
+  border: 1px solid #637983; /* Borde que combine con el fondo */
+}
+
+/* Estilo del placeholder (texto de ejemplo) */
+#buscador::placeholder {
+  color: #EAE4D5; /* Placeholder en blanco semi-transparente */
+}
+
+#buscador:focus {
+  border-color: #2a3e42;
+  box-shadow: 0 0 6px rgba(42,62,66,0.4);
+}
+
+.Lupa {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  filter: invert(80%); /* Color más neutral que el negro puro */
+}
+
+/* === CONTENEDOR SCROLL === */
+#contenedor-lista {
+  max-height: 62vh; /* Altura máxima visible */
+  overflow-y: auto;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #637983 transparent;
+}
+
+/* Scrollbar personalizada */
+#contenedor-lista::-webkit-scrollbar {
+  width: 8px;
+}
+#contenedor-lista::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 6px;
+}
+#contenedor-lista::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* === LISTA DE HIMNOS === */
+#lista-himnos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#lista-himnos li {
+  background: #637983;
+  margin: 15px 0;
+  padding: 12px 18px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+  
+  color: #EAE4D5;
+  font-weight: normal;
+  border-radius: 10px 10px 20px 10px;
+}
+
+#lista-himnos li:hover {
+  /*background: #A2B0BE;
+  color: #192E2F;/**/
+  transform: translateX(10px);
+}
+
+#lista-himnos li strong {
+  color: #EAE4D5;
+  font-size: 17px;
+  font-weight: normal;
+}
+
+#lista-himnos li small {
+  color: #EAE4D5;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/*#lista-himnos li:hover {
+  color: #192E2F;
+  font-weight: normal;
+}
+
+
+/* === MODAL === */
+#modal {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(162, 176, 190, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* === CONTENIDO DEL MODAL === */
+#contenido-modal {
+    position: relative;
+    background: #EAE4D5;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 1000px;
+    width: 90%;
+    max-height: 90vh;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    animation: slideUp 0.35s ease forwards;
+    scrollbar-color: #637983 transparent;
+    
+    /* FLEXBOX PARA DISTRIBUCIÓN ÓPTIMA */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* === CONTENIDO PRINCIPAL (OCUPA TODO EL ESPACIO DISPONIBLE) === */
+#contenido-modal .modal-content {
+    flex: 1; /* OCUPA TODO EL ESPACIO DISPONIBLE */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* IMPORTANTE: Evitar scroll duplicado */
+    min-height: 0; /* PERMITE QUE EL FLEX:1 FUNCIONE CORRECTAMENTE */
+}
+
+/* === ENCABEZADO DEL MODAL === */
+#contenido-modal h2 {
+    font-family: 'Sansation', sans-serif;
+    margin: 10px 0 8px 0;
+    font-size: 28px;
+    color: #2a3e42;
+    text-align: left;
+    line-height: 1.2;
+    flex-shrink: 0; /* NO SE REDUZCA */
+}
+
+/* Subinformación */
+#contenido-modal p {
+    font-size: 16px;
+    color: #333;
+    margin: 3px 0;
+    text-align: right;
+    flex-shrink: 0; /* NO SE REDUZCA */
+}
+
+/* === LETRA DEL HIMNO (OCUPA TODO EL ESPACIO RESTANTE) === */
+#contenido-modal pre {
+    white-space: pre-wrap;
+    line-height: 1.6;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: #1c1c1c;
+    font-family: 'Sansation', cursive;
+    text-align: center;
+    
+    /* OCUPA TODO EL ESPACIO DISPONIBLE */
+    flex: 1; 
+    overflow-y: auto; /* SCROLL INTERNO */
+    /*min-height: 150px; /* ALTURA MÍNIMA */
+    
+    /* ESTILOS DE SCROLL */
+    scrollbar-width: thin;
+    scrollbar-color: #637983 #f0f0f0;
+}
+
+#contenido-modal pre::-webkit-scrollbar {
+    width: 6px;
+}
+
+#contenido-modal pre::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 3px;
+}
+
+#contenido-modal pre::-webkit-scrollbar-thumb {
+    background: #637983;
+    border-radius: 3px;
+}
+
+/* === CONTROL DE TAMAÑO (FIJO EN LA PARTE INFERIOR) === */
+#contenido-modal .control-tamano-personalizado {
+    margin-top: 15px;
+    padding: 12px 15px;
+    border-top: 1px solid #d4cdbc;
+    background: #637983;
+    border-radius: 12px;
+    color: #EAE4D5;
+    flex-shrink: 0; /* TAMAÑO FIJO - NO SE REDUZCA */
+}
+
+/* === BOTÓN DE CIERRE === */
+#contenido-modal button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    border: none;
+    background: transparent;
+    color: rgba(42,62,66,0.9);
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+#contenido-modal button:hover {
+    transform: rotate(90deg);
+}
+
+/* === ANIMACIONES === */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* === RESPONSIVE MEJORADO === */
+@media (max-width: 768px) {
+    #modal {
+        padding: 5px;
+    }
+    
+    #contenido-modal {
+        padding: 15px;
+        width: 95%;
+        max-height: 95vh;
+        height: auto; /* PERMITE CRECER NATURALMENTE */
+    }
+    
+    #contenido-modal h2 {
+        font-size: 22px;
+        margin: 5px 0 6px 0;
+    }
+    
+    #contenido-modal p {
+        font-size: 14px;
+        margin: 2px 0;
+    }
+    
+    #contenido-modal pre {
+        font-size: 16px;
+        padding: 10px;
+        margin-top: 8px;
+        line-height: 1.5;
+        /*min-height: 120px; /* REDUCIDO PARA MÓVILES */
+    }
+    
+    #contenido-modal .control-tamano-personalizado {
+        padding: 10px 12px;
+        margin-top: 12px; /* MÁS ESPACIO EN MÓVILES */
+    }
+    
+    #contenido-modal button {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+        top: 8px;
+        right: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    #modal {
+        padding: 2px;
+    }
+    
+    #contenido-modal {
+        padding: 10px 8px;
+        width: 98%;
+        max-height: 98vh;
+        border-radius: 12px;
+    }
+    
+    #contenido-modal h2 {
+        font-size: 20px;
+        margin: 3px 0 4px 0;
+    }
+    
+    #contenido-modal p {
+        font-size: 13px;
+    }
+    
+    #contenido-modal pre {
+        font-size: 15px;
+        padding: 8px;
+        margin-top: 6px;
+        line-height: 1.4;
+        min-height: 100px; /* MÍNIMO PARA PANTALLAS PEQUEÑAS */
+    }
+    
+    #contenido-modal .control-tamano-personalizado {
+        padding: 8px 10px;
+        margin-top: 10px;
+        border-radius: 8px;
+    }
+    
+    .control-deslizador {
+        margin: 10px 0 8px 0;
+    }
+    
+    .marcas-tamano {
+        margin-top: 6px;
+        font-size: 10px;
+    }
+}
+
+/* ESTILO ESPECIAL PARA PANTALLAS MUY PEQUEÑAS EN ORIENTACIÓN VERTICAL */
+@media (max-width: 480px) and (max-height: 700px) {
+    #contenido-modal {
+        max-height: 96vh;
+        padding: 8px 6px;
+    }
+    
+    #contenido-modal pre {
+        min-height: 80px; /* AÚN MÁS PEQUEÑO EN PANTALLAS CORTAS */
+        font-size: 14px;
+        padding: 6px;
+    }
+    
+    #contenido-modal h2 {
+        font-size: 18px;
+        margin: 2px 0 3px 0;
+    }
+    
+    #contenido-modal .control-tamano-personalizado {
+        padding: 6px 8px;
+        margin-top: 8px;
+    }
+}

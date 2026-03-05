@@ -1,0 +1,225 @@
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&family=Oleo+Script&display=swap');
+
+/* Eliminar scroll visible del body y html */
+html, /* Oculta la barra de scroll vertical, pero permite hacer scroll */
+body {
+    overflow-y: scroll; /* asegura que el scroll siga funcionando */
+    scrollbar-width: none; /* para Firefox */
+}
+
+/* Para navegadores WebKit como Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* opcional, por si quieres un fondo invisible */
+}
+
+
+.contenido {
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.contenido::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+
+
+
+
+
+
+
+/* === FONDO CON IMAGEN DESENFOCADA === */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Sansation', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+
+  
+  background-image: url('https://directorioasambleasvzla.com/iconos/Fonfo_Mapa_Color.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.65;
+  z-index: -1;
+}
+
+/* === CONTENEDOR CENTRAL === */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.92);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* === TÍTULOS === */
+h1, h2 {
+  text-align: center;
+  font-family: 'Oleo Script', cursive;
+  color: #2a3e42;
+}
+
+/* === FORMULARIO === */
+form {
+  margin-top: 20px;
+}
+
+form label {
+  font-weight: bold;
+  margin-top: 15px;
+  display: block;
+  color: #2a3e42;
+}
+
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+form button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: #4a6c82;
+  color: #EAE4D5;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background-color: #3b5c68;
+}
+
+form .cancelar {
+  margin-left: 10px;
+  color: #c0392b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+form .cancelar:hover {
+  text-decoration: underline;
+}
+
+/* === TARJETAS DE EVENTO === */
+.evento {
+  background-color: #e9f0f3;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+.evento h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #2a3e42;
+}
+
+.evento small {
+  display: block;
+  margin-top: 8px;
+  color: #555;
+}
+
+.evento .acciones {
+  margin-top: 10px;
+}
+
+.evento .acciones a {
+  text-decoration: none;
+  margin-right: 15px;
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.evento .acciones a:hover {
+  color: #0056b3;
+}
+
+/* === BOTÓN DE REGRESO === */
+.return-button {
+  background: url('https://directorioasambleasvzla.com/iconos/Retorno.png') no-repeat center;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.return-button:hover {
+  transform: scale(1.25);
+}
+
+
+
+
+/* Agrega esto en crud_eventos.css */
+a.eliminar {
+  color: red;
+  text-decoration: none;
+}
+
+
+/* === RESPONSIVE === */
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url('https://directorioasambleasvzla.com/iconos/Fondo_Mapa_Tlf.png');
+  }
+
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .return-button {
+    display: inline-block !important;
+  }
+
+  .evento {
+    padding: 15px;
+  }
+
+  .return-button {
+    display: none !important;
+  }
+}
