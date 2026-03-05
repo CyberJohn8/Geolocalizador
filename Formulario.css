@@ -1,0 +1,485 @@
+/* === FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&family=Sansation&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+html, body {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Sansation', cursive;/**/
+    font-weight: normal;
+}
+
+/* Estilos generales */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('iconos/Fonfo_Mapa.jpg'); /* tu imagen */
+    background-size: cover; /* Mostrar la imagen completa */
+    background-repeat: no-repeat;
+    background-position: top;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+/* Asegura que el contenido esté por encima del overlay */
+.container, .contenido, form {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+/* Contenedor principal */
+.container {
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 400px;
+    margin: 60px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+    
+    background-color: #EEEFF1;
+    text-align: center;
+}
+
+
+/* Título */
+h1 {
+    font-family: 'Oleo Script', cursive;
+    font-weight: normal;
+    font-size: 30px;
+    color: #2a3e42;
+}
+
+/* Texto descriptivo */
+p {
+    font-size: 24px;
+    color: #4b5563;
+    margin-bottom: 20px;
+    font-family: 'Sansation', cursive;
+}
+
+/* Botones */
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    color: #EAE4D5;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Colores de los botones */
+.btn-login {
+    background-color: #4D6164; /* Azul */
+}
+
+.btn-register {
+    background-color: #4D6164; /* Verde */
+}
+
+.btn-guest {
+    background-color: #4D6164; /* Gris */
+}
+
+/* Efecto hover */
+button:hover {
+    opacity: 0.9;
+}
+
+
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Iniciar Sesion
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */ 
+/* Para el contenedor principal */
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Contenedor del formulario */
+.container_Sesion {
+    background-color: #EEEFF1;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+
+    align-items: center; /* Centra los elementos hijos horizontalmente */
+    margin: 0 auto; /* Centra el contenedor .contenido en la página */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* Estilos para los títulos */
+.container_Sesion h1 {
+    margin-bottom: 10px;
+
+    font-family: 'Oleo Script', cursive;/**/
+    font-weight: normal;
+    font-size: 38px;
+    color: #2a3e42;
+}
+
+.container_Sesion p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los campos de entrada */
+.container_Sesion form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container_Sesion label {
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.container_Sesion input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Estilos para los botones */
+.container_Sesion button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Botón de registro */
+.container_Sesion .btn-register {
+    background-color: #28a745;
+    color: #EAE4D5;
+}
+
+.container_Sesion .btn-register:hover {
+    background-color: #218838;
+}
+
+/* Botón para regresar */
+.container_Sesion .btn-back {
+    background-color: #6c757d;
+    color: #EAE4D5;
+    margin-top: 10px;
+}
+
+.container_Sesion .btn-back:hover {
+    background-color: #5a6268;
+}
+
+/* Mensaje de validación */
+.container_Sesion #message {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+.container_Sesion .login-container {
+    
+    background-color: #EAE4D5;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+
+}
+
+/* Estilos para los campos del formulario */
+.container_Sesion input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilos para los enlaces */
+.container_Sesion a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.container_Sesion a:hover {
+    text-decoration: underline;
+}
+
+/*¿Olvidaste tu contraseña?*/
+.forgot-password-link {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Registrarse
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */ 
+/* Centrado total de la pantalla */
+.wrapperRegistro {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;  /* Centrado horizontal */
+    align-items: center;      /* Centrado vertical */
+    padding: 20px;            /* Espacio en móviles */
+    box-sizing: border-box;
+}
+
+/* Contenedor del formulario */
+.container_Registro {
+    background-color: #EEEFF1;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+
+    align-items: center; /* Centra los elementos hijos horizontalmente */
+    margin: 0 auto; /* Centra el contenedor .contenido en la página */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* Estilos para los títulos */
+.container_Registro h1 {
+    margin-bottom: 10px;
+    
+    font-family: 'Oleo Script', cursive;/**/
+    font-weight: normal;
+    font-size: 38px;
+    color: #2a3e42;
+}
+
+.container_Registro p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los campos de entrada */
+.container_Registro form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container_Registro label {
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.container_Registro input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Estilos para los botones */
+.container_Registro button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Botón de registro */
+.container_Registro .btn-register {
+    background-color: #28a745;
+    color: #EAE4D5;
+}
+
+.container_Registro .btn-register:hover {
+    background-color: #218838;
+}
+
+/* Botón para regresar */
+.container_Registro .btn-back {
+    background-color: #6c757d;
+    color: #EAE4D5;
+    margin-top: 10px;
+}
+
+.container_Registro .btn-back:hover {
+    background-color: #5a6268;
+}
+
+/* Mensaje de validación */
+.container_Registro #message {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* Adaptación para teléfonos pequeños (600px x 600px) */
+@media screen and (max-width: 600px) {
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh; /* ← Cambiado de max-height */
+        overflow-x: hidden; /* evita scroll lateral */
+        background-image: url('iconos/Fondo_Mapa_Color_Tlf.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /* Estilos generales */
+    body::after {
+        background-image: none; /* tu imagen */
+    }
+
+    .wrapper, .wrapperRegistro {
+        width: 300px;
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    
+
+    .container_Sesion,
+    .container_Registro {
+        width: 100%;
+        padding: 20px 15px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+
+    .container_Sesion h1,
+    .container_Registro h1 {
+        font-size: 20px;
+    }
+
+    .container_Sesion input,
+    .container_Registro input {
+        font-size: 13px;
+        padding: 4px;
+    }
+
+    .container_Sesion button,
+    .container_Registro button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .container_Sesion p,
+    .container_Registro p,
+    .forgot-password-link {
+        font-size: 12px;
+    }
+}
+
+
+/* Estilo específico para pantallas de hasta 280px */
+@media screen and (max-width: 280px) {
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        overflow-x: hidden;
+        background-image: url('iconos/Fondo_Mapa_Color_Tlf.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .wrapper, .wrapperRegistro {
+        width: 260px;
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container_Sesion,
+    .container_Registro {
+        width: 100%;
+        padding: 20px 15px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+
+    .container_Sesion h1,
+    .container_Registro h1 {
+        font-size: 20px;
+    }
+
+    .container_Sesion input,
+    .container_Registro input {
+        font-size: 13px;
+        padding: 4px;
+    }
+
+    .container_Sesion button,
+    .container_Registro button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .container_Sesion p,
+    .container_Registro p,
+    .forgot-password-link {
+        font-size: 12px;
+    }
+}

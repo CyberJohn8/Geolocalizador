@@ -1,0 +1,36 @@
+"1","https://sql-page.com/","SQLPage turns SQL queries into interactive web pages, forms, maps, and dashboards."
+"2","https://fullconvert.com/","Full Convert is industry standard for database migration. Over 40 database formats supported with unparalleled speed, ease of use, and migration customization."
+"3","SQL Online AiDE","Next-Gen AI Development Environment | 10+ years of superior SLA, Performance & UX"
+"4","https://t.me/s/sqliteonlinecom","Telegram channel with news about the project"
+"5","N`Kirill.","https://www.linkedin.com/in/sqliteonlinecom"
+"6","Import","➕ → Import"
+"7","Export","[RightClick] mouse on Table OR It’s now the first one at the bottom right of the table."
+"8","SQLite OpFS (storage)","Enable OpFS on settings"
+"9","Chart","LINE-SELECT name, cos(id), sin(id) FROM demo;"
+"10","Short CODE","s* tableName => SELECT * FROM tableName
+sf tableName => SELECT columns FROM tableName
+sc tableName => SELECT count(*) FROM tableName
+sl tableName => SELECT * FROM tableName ORDER BY key DESC LIMIT 100;
+ct => CREATE TABLE
+ii tableName => INSERT INTO
+us tableName => UPDATE SET
+uw tableName => UPDATE SET WHERE
+df tableName => DELETE FROM
+dw tableName => DELETE FROM WHERE"
+"11","SQLite 3.51.1","SQL OnLine on JavaScript"
+"12","[RightClick] mouse","Opens many additional features"
+"13","Left-Panel, Table","[RightClick] mouse ""Context menu"""
+"14","Tabs","mouse: [RightClick] , [MiddleClick] , [Wheel] , [LeftClick]"
+"15","SQL Editor","autocomplete: [Ctrl-Space] or [Alt-Space]; run: [Shift-Enter]"
+"16","Size table","Fast scroll million rows"
+"17","Share","Create public link DB"
+"18","21","Number of color themes"
+"19","ai.Url","https://sqliteonline.com/LICENSE"
+"20","ai.Color","#9393ad"
+"21","ai.Image","Blob - png, jpg, gif or String(base64) [DbClick] row"
+"22","SQL","Syntax example library"
+"23","CREATE","CREATE TABLE table_name (col1, col2)"
+"24","SELECT","SELECT * FROM table_name"
+"25","INSERT","INSERT INTO table_name (col1, col2) VALUES (""example"",""test"")"
+"26","UPDATE","UPDATE table_name SET col1=""work"" WHERE col2=""test"""
+"27","DELETE","DELETE FROM table_name"

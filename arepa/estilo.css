@@ -1,0 +1,293 @@
+/* =========================================================
+   FUENTES Y ESTILOS GENERALES (del diseño Lista.css)
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Sansation&family=Oleo+Script&display=swap');
+
+body {
+    font-family: 'Sansation', sans-serif;
+    margin: 0;
+    padding: 0;
+    /**background: #000;/**/
+    background-image: url('https://directorioasambleasvzla.com/iconos/Fonfo_Mapa_Color.png');
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Fondo estilo Lista.css */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://directorioasambleasvzla.com/iconos/Fonfo_Mapa_Color.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+/* Contenedor principal */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 15px;
+    color: #EAE4D5;
+}
+
+/* =========================================================
+   TITULOS
+   ========================================================= */
+h2, h3, h4 {
+    font-family: 'Oleo Script', cursive;
+    text-align: center;
+    color: #2a3e42;
+}
+
+h3, h4 {
+    margin-top: 20px;
+}
+
+/* =========================================================
+   SELECT DE CATEGORÍA/TABLA
+   ========================================================= */
+.selector {
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.selector select {
+    padding: 12px 16px;
+    font-size: 15px;
+    border-radius: 10px;
+    /**background-color: #637983;/**/
+    color: #EAE4D5;
+    min-width: 240px;
+
+    border: none;
+    appearance: none;
+    background-image: url('https://directorioasambleasvzla.com/iconos/Barrita.png');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+}
+
+.selector select:focus {
+    outline: none;
+}
+
+/* =========================================================
+   FORM AGREGAR
+   ========================================================= */
+.form-box {
+    background-color: rgba(25, 46, 47, 0.75);
+    padding: 20px;
+    border-radius: 12px;
+    width: 350px;
+    margin: 20px auto;
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+
+.form-box label {
+    color: #EAE4D5;
+    font-size: 14px;
+}
+
+.form-box input, 
+.form-box select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    background: #637983;
+    color: #EAE4D5;
+    border-radius: 8px;
+    border: none;
+}
+
+.form-box button {
+    width: 100%;
+    background: #637983;
+    color: #EAE4D5;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-box button:hover {
+    background: #A2B0BE;
+}
+
+/* =========================================================
+   TABLA CON CONTENEDOR
+   ========================================================= */
+.tabla-scroll {
+    max-height: 400px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    margin-top: 20px;
+    border-radius: 12px;
+    border: 3px solid #637983;
+    background-color: rgba(255,255,255,0.2);
+    backdrop-filter: blur(4px);
+}
+
+.tabla-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th {
+    background: #637983;
+    color: #EAE4D5;
+    padding: 10px;
+    font-size: 17px;
+    position: sticky;
+    top: 0;
+}
+
+td {
+    background: rgba(255,255,255,0.4);
+    color: #192E2F;
+    padding: 8px;
+    border-bottom: 1px solid #637983;
+}
+
+input[type=text] {
+    padding: 8px;
+    border-radius: 6px;
+    width: 120px;
+    border: none;
+    background: #EAE4D5;
+}
+
+/* =========================================================
+   BOTONES
+   ======================================================== */
+button {
+    font-family: 'Sansation';
+}
+
+.btn-delete {
+    background-color: #c02020;
+    padding: 6px 10px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #ff4040;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 768px) {
+    .form-box {
+        width: 90%;
+    }
+
+    table input[type=text] {
+        width: 90px;
+    }
+}
+
+@media (max-width: 480px) {
+    th, td {
+        font-size: 12px;
+        padding: 4px;
+    }
+
+    table input[type=text] {
+        width: 70px;
+    }
+
+    .selector select {
+        min-width: 180px;
+    }
+}
+
+
+
+
+
+
+/* =========================================================
+   MODAL – CONTENEDOR GENERAL
+   ========================================================= */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    display: none;
+    padding-top: 60px;
+    z-index: 999;
+}
+
+/* Caja interna del modal */
+.modal-content {
+    background: white;
+    width: 85%;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 12px;
+    max-height: 85vh;   /* evita que sea enorme */
+    overflow: hidden;   /* importante */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* Botón cerrar */
+.modal-close {
+    float: right;
+    background: #c02020;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.modal-close:hover {
+    background: #ff4040;
+}
+
+/* =========================================================
+   TABLA DENTRO DEL MODAL CON SCROLL
+   ========================================================= */
+
+.modal-table-scroll {
+    flex-grow: 1;
+    overflow-y: auto;
+    scrollbar-width: none;
+    margin-top: 15px;
+    padding-right: 5px;
+}
+
+.modal-table-scroll::-webkit-scrollbar {
+    display: none;
+}
